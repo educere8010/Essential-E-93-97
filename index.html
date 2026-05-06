@@ -1,0 +1,2356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>천일문 독해 Essential E-93~E-97 | 에듀케레 영수학원</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=EB+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1a2744;
+    --navy-light:#2c3e60;
+    --gold:#c8a84b;
+    --gold-light:#e6cf83;
+    --bg:#f8f6f1;
+    --paper:#ffffff;
+    --text:#222;
+    --text-soft:#555;
+    --line:#e6dfce;
+    --green:#2e7d32;
+    --green-bg:#e8f5e9;
+    --red:#c62828;
+    --red-bg:#ffebee;
+    --yellow-bg:#fff8d6;
+    --yellow-text:#7f6000;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:'Noto Sans KR','Malgun Gothic',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    -webkit-text-size-adjust:100%;
+  }
+  .layout{display:flex;min-height:100vh}
+
+  /* === 사이드바 === */
+  .sidebar{
+    width:280px;
+    background:linear-gradient(180deg,var(--navy) 0%,var(--navy-light) 100%);
+    color:#fff;
+    padding:28px 20px;
+    position:sticky;top:0;
+    height:100vh;
+    overflow-y:auto;
+    flex-shrink:0;
+  }
+  .brand{
+    text-align:center;
+    padding-bottom:18px;
+    border-bottom:1px solid rgba(200,168,75,0.3);
+    margin-bottom:18px;
+  }
+  .brand-ko{
+    font-size:18px;
+    font-weight:900;
+    color:var(--gold);
+    letter-spacing:1px;
+    margin-bottom:4px;
+  }
+  .brand-sub{
+    font-size:11px;
+    color:#b8c4dc;
+    letter-spacing:0.5px;
+  }
+  .series-title{
+    font-family:'Playfair Display',serif;
+    font-size:14px;
+    color:#fff;
+    text-align:center;
+    padding:10px 0 6px;
+    letter-spacing:0.5px;
+  }
+  .series-sub{
+    font-size:11px;
+    color:#b8c4dc;
+    text-align:center;
+    margin-bottom:18px;
+  }
+  .nav-label{
+    font-size:10px;
+    color:#8a98b5;
+    letter-spacing:2px;
+    margin:14px 4px 8px;
+    font-weight:700;
+  }
+  .passage-btn{
+    display:block;
+    width:100%;
+    padding:12px 14px;
+    margin-bottom:6px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:6px;
+    color:#e6e6e6;
+    font-family:inherit;
+    font-size:13px;
+    text-align:left;
+    cursor:pointer;
+    transition:all 0.2s;
+  }
+  .passage-btn:hover{background:rgba(200,168,75,0.15);border-color:var(--gold);color:#fff}
+  .passage-btn.active{
+    background:var(--gold);
+    color:var(--navy);
+    border-color:var(--gold);
+    font-weight:700;
+  }
+  .passage-btn .pid{
+    display:inline-block;
+    font-family:'Playfair Display',serif;
+    font-weight:900;
+    margin-right:8px;
+    font-size:14px;
+  }
+  .passage-btn .ptitle{font-size:11px;opacity:0.85}
+  .passage-btn.active .ptitle{opacity:1}
+  .footer-mini{
+    margin-top:24px;
+    padding-top:16px;
+    border-top:1px solid rgba(200,168,75,0.2);
+    font-size:10px;
+    color:#8a98b5;
+    text-align:center;
+    line-height:1.6;
+  }
+
+  /* === 메인 영역 === */
+  .main{flex:1;padding:0;min-width:0}
+  .topbar{
+    background:var(--paper);
+    border-bottom:2px solid var(--gold);
+    padding:18px 36px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;top:0;z-index:10;
+    box-shadow:0 2px 8px rgba(0,0,0,0.04);
+  }
+  .topbar-left{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .topbar h1{
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    color:var(--navy);
+    font-weight:900;
+  }
+  .topbar .pid-tag{
+    font-family:'Playfair Display',serif;
+    background:var(--navy);
+    color:var(--gold);
+    padding:4px 12px;
+    border-radius:4px;
+    font-size:14px;
+    font-weight:700;
+  }
+  .topbar .academy{
+    font-size:12px;
+    color:var(--text-soft);
+    font-weight:500;
+  }
+
+  /* === 탭 === */
+  .tabs{
+    display:flex;
+    flex-wrap:wrap;
+    background:var(--paper);
+    padding:0 36px;
+    border-bottom:1px solid var(--line);
+    position:sticky;top:73px;z-index:9;
+    gap:2px;
+  }
+  .tab-btn{
+    padding:14px 18px;
+    background:transparent;
+    border:none;
+    border-bottom:3px solid transparent;
+    font-family:inherit;
+    font-size:13px;
+    font-weight:500;
+    color:var(--text-soft);
+    cursor:pointer;
+    transition:all 0.2s;
+    white-space:nowrap;
+  }
+  .tab-btn:hover{color:var(--navy);background:rgba(200,168,75,0.06)}
+  .tab-btn.active{
+    color:var(--navy);
+    border-bottom-color:var(--gold);
+    font-weight:700;
+  }
+  .tab-num{
+    font-family:'Playfair Display',serif;
+    font-weight:900;
+    margin-right:6px;
+    color:var(--gold);
+  }
+  .tab-btn.active .tab-num{color:var(--navy)}
+
+  /* === 콘텐츠 === */
+  .content{padding:36px;max-width:1100px;margin:0 auto}
+  .panel{display:none}
+  .panel.active{display:block;animation:fadein 0.3s ease}
+  .tab-pane{display:none}
+  .tab-pane.active{display:block;animation:fadein 0.3s ease}
+  @keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+  /* === 공통 카드 === */
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:24px 28px;
+    margin-bottom:18px;
+    box-shadow:0 1px 3px rgba(0,0,0,0.03);
+  }
+  .section-h{
+    font-family:'Playfair Display',serif;
+    font-size:20px;
+    color:var(--navy);
+    border-left:5px solid var(--gold);
+    padding-left:14px;
+    margin-bottom:18px;
+    font-weight:700;
+  }
+
+  /* === 전문(원문) === */
+  .full-passage{
+    border:2px solid var(--navy);
+    border-left:6px solid var(--gold);
+    background:#fdfcf8;
+    padding:24px 28px;
+    border-radius:6px;
+    font-family:'EB Garamond',serif;
+    font-size:17px;
+    line-height:1.85;
+    color:#1a1a1a;
+    margin-bottom:14px;
+  }
+  .full-passage-meta{
+    font-size:12px;
+    color:var(--text-soft);
+    margin-bottom:14px;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .full-passage-meta span{
+    background:#f3edd8;
+    padding:4px 10px;
+    border-radius:12px;
+    color:var(--yellow-text);
+    font-weight:600;
+  }
+
+  /* === 문장 분석 === */
+  .sent-block{
+    margin-bottom:26px;
+    padding-bottom:22px;
+    border-bottom:1px dashed var(--line);
+  }
+  .sent-block:last-child{border-bottom:none}
+  .sent-num{
+    display:inline-block;
+    font-family:'Playfair Display',serif;
+    font-weight:900;
+    color:var(--gold);
+    font-size:18px;
+    margin-bottom:6px;
+  }
+  .en-box{
+    border:1px solid #cccccc;
+    border-left:4px solid var(--navy);
+    background:#fff;
+    padding:14px 18px;
+    border-radius:4px;
+    font-family:'EB Garamond',serif;
+    font-size:16px;
+    line-height:1.7;
+    color:#1a1a1a;
+    margin-bottom:10px;
+  }
+  .literal{
+    background:#f7f4ea;
+    padding:12px 16px;
+    border-radius:4px;
+    font-size:13.5px;
+    line-height:1.85;
+    color:#3a3a3a;
+    margin-bottom:10px;
+  }
+  .literal-en{color:#444;font-family:'EB Garamond',serif;font-size:14px}
+  .literal-ko{color:#222;font-weight:500;margin-top:6px;display:block}
+  .grammar-list{list-style:none;padding-left:4px}
+  .grammar-list li{
+    padding:6px 0;
+    font-size:13px;
+    line-height:1.7;
+  }
+  .gr-name{color:var(--navy);font-weight:700}
+  .gr-ex{color:#555;font-style:italic}
+  .gr-pt{color:var(--yellow-text);background:var(--yellow-bg);padding:2px 6px;border-radius:3px;font-size:12px}
+
+  /* === 단어 === */
+  .vocab-item{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    padding:12px 14px;
+    border-bottom:1px solid var(--line);
+    flex-wrap:wrap;
+  }
+  .vocab-item:last-child{border-bottom:none}
+  .vocab-word{
+    font-family:'EB Garamond',serif;
+    font-weight:700;
+    font-size:17px;
+    color:var(--navy);
+    background:var(--green-bg);
+    padding:3px 10px;
+    border-radius:4px;
+    color:var(--green);
+    min-width:130px;
+  }
+  .vocab-pos{
+    font-size:12px;
+    color:#888;
+    font-style:italic;
+    min-width:50px;
+  }
+  .vocab-mean{
+    font-size:14px;
+    color:#222;
+    flex:1;
+    min-width:160px;
+  }
+  .vocab-derive{
+    font-size:12px;
+    color:var(--text-soft);
+    font-family:'EB Garamond',serif;
+  }
+
+  /* === 해석 === */
+  .translation{
+    font-size:15px;
+    line-height:2;
+    color:#222;
+    text-indent:14px;
+  }
+
+  /* === 주제·요지 === */
+  .topic-block{margin-bottom:14px}
+  .topic-label{
+    display:inline-block;
+    background:var(--navy);
+    color:var(--gold);
+    padding:3px 12px;
+    border-radius:4px;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:6px;
+    letter-spacing:1px;
+  }
+  .topic-text{font-size:15px;line-height:1.85;color:#222}
+  .structure-step{
+    background:#fdfcf8;
+    border-left:3px solid var(--gold);
+    padding:10px 14px;
+    margin-bottom:8px;
+    font-size:14px;
+  }
+  .step-tag{
+    color:var(--navy);
+    font-weight:700;
+    margin-right:8px;
+  }
+
+  /* === 배경지식 === */
+  .bg-knowledge{
+    background:#fdf8e8;
+    border:1px solid var(--gold-light);
+    padding:18px 22px;
+    border-radius:6px;
+    font-size:14px;
+    line-height:1.95;
+    color:#3a3a3a;
+  }
+  .bg-knowledge h4{
+    color:var(--navy);
+    margin-bottom:8px;
+    font-size:15px;
+  }
+  .bg-knowledge p{margin-bottom:12px}
+  .bg-knowledge p:last-child{margin-bottom:0}
+
+  /* === 퀴즈 === */
+  .quiz-q{
+    background:#fafaf5;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:20px 24px;
+    margin-bottom:18px;
+  }
+  .quiz-num{
+    font-family:'Playfair Display',serif;
+    font-weight:900;
+    color:var(--navy);
+    font-size:16px;
+    margin-bottom:4px;
+  }
+  .quiz-type{
+    display:inline-block;
+    font-size:11px;
+    background:var(--navy);
+    color:var(--gold);
+    padding:2px 10px;
+    border-radius:10px;
+    margin-left:8px;
+    letter-spacing:0.5px;
+  }
+  .quiz-prompt{
+    font-size:14px;
+    margin:12px 0;
+    line-height:1.8;
+    color:#222;
+  }
+  .quiz-prompt em{
+    font-style:normal;
+    background:var(--yellow-bg);
+    padding:1px 4px;
+    border-bottom:2px solid var(--yellow-text);
+  }
+  .quiz-prompt u{
+    text-decoration-thickness:2px;
+    text-underline-offset:3px;
+  }
+  .quiz-passage{
+    font-family:'EB Garamond',serif;
+    font-size:15px;
+    line-height:1.85;
+    background:#fff;
+    border:1px solid var(--line);
+    padding:14px 18px;
+    border-radius:4px;
+    margin:10px 0;
+  }
+  .opts{list-style:none;margin-top:8px}
+  .opts li{
+    padding:10px 14px;
+    margin-bottom:6px;
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:6px;
+    cursor:pointer;
+    transition:all 0.15s;
+    font-size:13.5px;
+    line-height:1.6;
+  }
+  .opts li:hover{border-color:var(--gold);background:#fffbf0}
+  .opts li.correct{
+    background:var(--green-bg);
+    border-color:var(--green);
+    color:var(--green);
+    font-weight:600;
+  }
+  .opts li.wrong{
+    background:var(--red-bg);
+    border-color:var(--red);
+    color:var(--red);
+    text-decoration:line-through;
+  }
+  .opt-num{
+    font-weight:700;
+    margin-right:6px;
+    color:var(--navy);
+  }
+  .opts li.correct .opt-num{color:var(--green)}
+  .opts li.wrong .opt-num{color:var(--red)}
+  .feedback{
+    margin-top:10px;
+    padding:10px 14px;
+    border-radius:4px;
+    font-size:13px;
+    display:none;
+    line-height:1.7;
+  }
+  .feedback.show{display:block}
+  .feedback.ok{background:var(--green-bg);color:var(--green);border-left:3px solid var(--green)}
+  .feedback.no{background:var(--red-bg);color:var(--red);border-left:3px solid var(--red)}
+  .reset-btn{
+    margin-top:8px;
+    background:transparent;
+    border:1px solid var(--navy);
+    color:var(--navy);
+    padding:5px 14px;
+    border-radius:14px;
+    font-size:11px;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .reset-btn:hover{background:var(--navy);color:#fff}
+
+  /* === 서술형 === */
+  .essay-q{
+    background:#fff;
+    border:2px solid var(--navy);
+    border-left:6px solid var(--gold);
+    border-radius:6px;
+    padding:20px 24px;
+    margin-bottom:18px;
+  }
+  .essay-cond{
+    background:var(--yellow-bg);
+    color:var(--yellow-text);
+    padding:8px 12px;
+    border-radius:4px;
+    font-size:12px;
+    margin:10px 0;
+    line-height:1.7;
+  }
+  .essay-cond strong{color:var(--navy)}
+  .essay-area{
+    width:100%;
+    min-height:90px;
+    border:1.5px solid var(--line);
+    border-radius:4px;
+    padding:10px 12px;
+    font-family:inherit;
+    font-size:13px;
+    line-height:1.7;
+    margin-top:8px;
+    resize:vertical;
+  }
+  .essay-area:focus{outline:none;border-color:var(--gold)}
+  .ans-toggle{
+    margin-top:10px;
+    background:var(--navy);
+    color:var(--gold);
+    border:none;
+    padding:7px 16px;
+    border-radius:4px;
+    font-size:12px;
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:600;
+  }
+  .ans-toggle:hover{background:var(--navy-light)}
+  .ans-box{
+    display:none;
+    margin-top:10px;
+    padding:14px 18px;
+    background:var(--green-bg);
+    border-left:4px solid var(--green);
+    border-radius:4px;
+    font-size:13.5px;
+    line-height:1.85;
+  }
+  .ans-box.show{display:block}
+  .ans-box strong{color:var(--green)}
+
+  /* === 푸터 === */
+  .page-footer{
+    text-align:center;
+    padding:30px 20px;
+    color:var(--text-soft);
+    font-size:12px;
+    border-top:1px solid var(--line);
+    margin-top:30px;
+    background:var(--paper);
+  }
+  .page-footer .ac{
+    font-weight:700;
+    color:var(--navy);
+    font-size:13px;
+    margin-bottom:4px;
+  }
+
+  /* === 모바일 === */
+  @media(max-width:900px){
+    .layout{flex-direction:column}
+    .sidebar{
+      width:100%;
+      height:auto;
+      position:static;
+      padding:18px;
+    }
+    .topbar,.tabs,.content{padding-left:18px;padding-right:18px}
+    .full-passage{font-size:15px;padding:18px 20px}
+    .en-box{font-size:14.5px}
+    .vocab-item{flex-direction:column;gap:4px}
+    .vocab-word{min-width:auto}
+    .topbar h1{font-size:18px}
+    .tab-btn{padding:12px 10px;font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- 사이드바 -->
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-ko">에듀케레 영수학원</div>
+    <div class="brand-sub">EDUCARE · 바른학습관</div>
+  </div>
+  <div class="series-title">천일문 독해 Essential</div>
+  <div class="series-sub">E-93 ~ E-97 분석지</div>
+
+  <div class="nav-label">PASSAGES</div>
+  <button type="button" class="passage-btn active" onclick="showPassage('p93')">
+    <span class="pid">E-93</span><br><span class="ptitle">Classical Music & Spaces</span>
+  </button>
+  <button type="button" class="passage-btn" onclick="showPassage('p94')">
+    <span class="pid">E-94</span><br><span class="ptitle">FOMO & Scarcity Error</span>
+  </button>
+  <button type="button" class="passage-btn" onclick="showPassage('p95')">
+    <span class="pid">E-95</span><br><span class="ptitle">Transit of Venus</span>
+  </button>
+  <button type="button" class="passage-btn" onclick="showPassage('p96')">
+    <span class="pid">E-96</span><br><span class="ptitle">Order & Survival</span>
+  </button>
+  <button type="button" class="passage-btn" onclick="showPassage('p97')">
+    <span class="pid">E-97</span><br><span class="ptitle">Plants & Stomata</span>
+  </button>
+
+  <div class="footer-mini">
+    경남 양산시 물금읍<br>
+    Tel. 055.363.8010<br>
+    pf.kakao.com/_aEzYG
+  </div>
+</aside>
+
+<!-- 메인 -->
+<main class="main">
+
+<!-- ============== E-93 패널 ============== -->
+<section class="panel active" id="p93">
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="pid-tag">E-93</span>
+      <h1>Classical Music &amp; Exclusionary Spaces</h1>
+    </div>
+    <div class="academy">에듀케레 영수학원 · 천일문 독해 Essential</div>
+  </div>
+  <div class="tabs">
+    <button type="button" class="tab-btn active" onclick="showTab('p93','t1')"><span class="tab-num">①</span>전문</button>
+    <button type="button" class="tab-btn" onclick="showTab('p93','t2')"><span class="tab-num">②</span>문장분석</button>
+    <button type="button" class="tab-btn" onclick="showTab('p93','t3')"><span class="tab-num">③</span>핵심단어·표현</button>
+    <button type="button" class="tab-btn" onclick="showTab('p93','t4')"><span class="tab-num">④</span>전문해석</button>
+    <button type="button" class="tab-btn" onclick="showTab('p93','t5')"><span class="tab-num">⑤</span>주제·요지</button>
+    <button type="button" class="tab-btn" onclick="showTab('p93','t6')"><span class="tab-num">⑥</span>배경지식</button>
+    <button type="button" class="tab-btn" onclick="showTab('p93','t7')"><span class="tab-num">⑦</span>변형문제</button>
+  </div>
+  <div class="content">
+
+    <!-- ① 전문 -->
+    <div class="tab-pane active" id="p93-t1">
+      <h2 class="section-h">① 전문 (Full Passage)</h2>
+      <div class="full-passage-meta">
+        <span>총 7문장</span><span>약 165 words</span><span>주제: 음악사·문화사</span>
+      </div>
+      <div class="full-passage">
+        Around 1900, classical audiences were no longer allowed to shout, eat, and chat during a performance, as the venues for classical music changed. This was a way of keeping the lower classes out of the new symphony halls and opera houses (They were thought to be inherently noisy). Music that in many instances used to be for all was now exclusively for the elite. This exclusionary policy affected the music being written, too&mdash;since no one was talking, eating, or dancing anymore, the music could have extreme dynamics. Composers knew that every detail would be heard, so very quiet passages could now be written, and harmonically complex passages could be appreciated as well. Much of twentieth-century classical music could only work in (and was written for) the socially and acoustically restrictive spaces. A new kind of music came into existence that didn&rsquo;t exist previously&mdash;and the future emergence and refining of recording technology would make this music more available and ubiquitous.
+      </div>
+    </div>
+
+    <!-- ② 문장분석 -->
+    <div class="tab-pane" id="p93-t2">
+      <h2 class="section-h">② 문장 분석 (Sentence Analysis)</h2>
+
+      <div class="sent-block">
+        <div class="sent-num">①</div>
+        <div class="en-box">Around 1900, classical audiences <u>were no longer allowed to shout, eat, and chat</u> during a performance, <em>as</em> the venues for classical music changed.</div>
+        <div class="literal">
+          <span class="literal-en">Around 1900, / classical audiences / were no longer allowed / to shout, eat, and chat / during a performance, / as the venues for classical music changed.</span>
+          <span class="literal-ko">▶ 1900년경, / 클래식 청중들은 / 더 이상 허용되지 않았다 / 소리치고, 먹고, 잡담하는 것이 / 공연 중에, / 클래식 음악의 공연장이 변하면서.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">be allowed to V (수동태 + to부정사)</span> ▶ <span class="gr-ex">were no longer allowed to shout</span> ★ <span class="gr-pt">"allow + 목적어 + to V"의 수동형, "no longer"는 "더 이상 ~ 아닌"</span></li>
+          <li>◆ <span class="gr-name">접속사 as (~함에 따라/~때문에)</span> ▶ <span class="gr-ex">as the venues ... changed</span> ★ <span class="gr-pt">시간·이유의 의미를 동시에 가짐, 문맥상 "이유"로 해석</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">②</div>
+        <div class="en-box">This was a way of <u>keeping the lower classes out of</u> the new symphony halls and opera houses (They were thought <em>to be</em> inherently noisy).</div>
+        <div class="literal">
+          <span class="literal-en">This was a way / of keeping the lower classes / out of the new symphony halls and opera houses / (They were thought to be inherently noisy).</span>
+          <span class="literal-ko">▶ 이것은 한 방법이었다 / 하층 계급을 막는 / 새로운 교향곡 홀과 오페라 하우스 밖으로 / (그들은 본래 시끄럽다고 여겨졌다).</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">전치사 + 동명사 (of keeping)</span> ▶ <span class="gr-ex">a way of keeping ... out of</span> ★ <span class="gr-pt">"a way of V-ing": ~하는 방법; keep A out of B = A를 B 밖에 두다</span></li>
+          <li>◆ <span class="gr-name">be thought to V (수동 + to부정사)</span> ▶ <span class="gr-ex">were thought to be inherently noisy</span> ★ <span class="gr-pt">"~라고 여겨지다"; They thought them to be ... 의 수동형</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">③</div>
+        <div class="en-box">Music <em>that</em> in many instances used to be for all was now exclusively for the elite.</div>
+        <div class="literal">
+          <span class="literal-en">Music / that in many instances used to be for all / was now / exclusively for the elite.</span>
+          <span class="literal-ko">▶ 음악은 / 많은 경우에 모두를 위한 것이었던 / 이제는 / 오직 엘리트만을 위한 것이었다.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">주격 관계대명사 that</span> ▶ <span class="gr-ex">Music that ... used to be for all</span> ★ <span class="gr-pt">선행사 Music을 수식; 주어(Music)와 동사(was) 사이 긴 수식 구조 → 주어 파악이 출제 포인트</span></li>
+          <li>◆ <span class="gr-name">used to + V (과거의 습관·상태)</span> ▶ <span class="gr-ex">used to be for all</span> ★ <span class="gr-pt">"한때 ~이었다(지금은 아님)" – be used to V-ing(~에 익숙하다)와 구별 필수</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">④</div>
+        <div class="en-box">This exclusionary policy affected the music <u>being written</u>, too&mdash;<em>since</em> no one was talking, eating, or dancing anymore, the music could have extreme dynamics.</div>
+        <div class="literal">
+          <span class="literal-en">This exclusionary policy / affected / the music being written, too / — since no one was talking, eating, or dancing anymore, / the music could have extreme dynamics.</span>
+          <span class="literal-ko">▶ 이 배타적 정책은 / 영향을 미쳤다 / 작곡되고 있는 음악에도 / — 더 이상 아무도 말하거나, 먹거나, 춤추지 않았으므로 / 음악은 극단적인 강약을 가질 수 있었다.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">현재분사 수동형 (being p.p.)</span> ▶ <span class="gr-ex">the music being written</span> ★ <span class="gr-pt">명사 뒤에서 수식하는 분사구; "작곡되고 있는 음악" – 진행+수동의 의미</span></li>
+          <li>◆ <span class="gr-name">접속사 since (~이므로)</span> ▶ <span class="gr-ex">since no one was talking ...</span> ★ <span class="gr-pt">이유의 since; "~이래로(시간)"와 구별 필수</span></li>
+          <li>◆ <span class="gr-name">부정주어 + 진행형</span> ▶ <span class="gr-ex">no one was talking, eating, or dancing</span> ★ <span class="gr-pt">no one은 단수 취급; 동명사 병렬 구조 주의</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑤</div>
+        <div class="en-box">Composers knew <em>that</em> every detail would be heard, so very quiet passages could now be written, and harmonically complex passages could be <u>appreciated</u> as well.</div>
+        <div class="literal">
+          <span class="literal-en">Composers knew / that every detail would be heard, / so very quiet passages could now be written, / and harmonically complex passages / could be appreciated as well.</span>
+          <span class="literal-ko">▶ 작곡가들은 알고 있었다 / 모든 세부사항이 들릴 것임을, / 그래서 매우 조용한 악절이 이제 작곡될 수 있었고, / 화성적으로 복잡한 악절도 / 마찬가지로 감상될 수 있었다.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">명사절 접속사 that</span> ▶ <span class="gr-ex">knew that every detail would be heard</span> ★ <span class="gr-pt">knew의 목적어로 쓰인 명사절; that 생략 가능 여부 주목</span></li>
+          <li>◆ <span class="gr-name">조동사 수동태 (could be p.p.)</span> ▶ <span class="gr-ex">could be written / could be appreciated</span> ★ <span class="gr-pt">"조동사 + be + p.p." 형태가 세 번 반복; 주어가 행위의 대상</span></li>
+          <li>◆ <span class="gr-name">상관 부사구 as well</span> ▶ <span class="gr-ex">could be appreciated as well</span> ★ <span class="gr-pt">"~도 또한"의 의미; too와 동의어 (문말 위치)</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑥</div>
+        <div class="en-box">Much of twentieth-century classical music could only work in (and was written for) the socially and acoustically restrictive spaces.</div>
+        <div class="literal">
+          <span class="literal-en">Much of twentieth-century classical music / could only work in / (and was written for) / the socially and acoustically restrictive spaces.</span>
+          <span class="literal-ko">▶ 20세기 클래식 음악의 많은 부분은 / 오직 ~안에서만 작동할 수 있었고 / (그리고 ~을 위해 쓰여졌다) / 사회적·음향적으로 제한적인 공간들 안에서.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">Much of + 단수명사</span> ▶ <span class="gr-ex">Much of ... music could ...</span> ★ <span class="gr-pt">불가산명사를 받는 단수 주어; many of 가산복수와 구별</span></li>
+          <li>◆ <span class="gr-name">전치사 공유 구조</span> ▶ <span class="gr-ex">could only work in (and was written for) the spaces</span> ★ <span class="gr-pt">두 동사구가 같은 목적어를 공유; in / for 둘 다 the spaces에 연결</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑦</div>
+        <div class="en-box">A new kind of music came into existence <em>that</em> didn&rsquo;t exist previously&mdash;and the future emergence and refining of recording technology <u>would make</u> this music more available and ubiquitous.</div>
+        <div class="literal">
+          <span class="literal-en">A new kind of music / came into existence / that didn't exist previously — / and the future emergence and refining of recording technology / would make this music / more available and ubiquitous.</span>
+          <span class="literal-ko">▶ 새로운 종류의 음악이 / 존재하게 되었다 / 이전에는 존재하지 않았던 — / 그리고 미래의 녹음 기술의 출현과 정교화는 / 이 음악을 만들 것이었다 / 더 이용 가능하고 널리 퍼지게.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">주격 관계대명사 that의 분리</span> ▶ <span class="gr-ex">music came into existence that didn't exist previously</span> ★ <span class="gr-pt">선행사(music)와 관계대명사(that)가 분리됨 – 동사 came into existence가 사이에 옴</span></li>
+          <li>◆ <span class="gr-name">make + 목적어 + 형용사 (5형식)</span> ▶ <span class="gr-ex">make this music more available and ubiquitous</span> ★ <span class="gr-pt">make의 목적격 보어로 형용사 사용; 비교급 형용사 병렬</span></li>
+          <li>◆ <span class="gr-name">would (과거의 미래)</span> ▶ <span class="gr-ex">would make this music ...</span> ★ <span class="gr-pt">과거 시점에서 본 미래; "~할 것이었다"</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ③ 핵심단어 -->
+    <div class="tab-pane" id="p93-t3">
+      <h2 class="section-h">③ 핵심 단어 및 표현</h2>
+      <div class="card">
+        <div class="vocab-item"><span class="vocab-word">audience</span><span class="vocab-pos">n.</span><span class="vocab-mean">청중, 관객</span><span class="vocab-derive">audible (adj. 들리는), audition (n. 오디션)</span></div>
+        <div class="vocab-item"><span class="vocab-word">venue</span><span class="vocab-pos">n.</span><span class="vocab-mean">(콘서트·공연 등의) 장소, 개최지</span><span class="vocab-derive">—</span></div>
+        <div class="vocab-item"><span class="vocab-word">symphony</span><span class="vocab-pos">n.</span><span class="vocab-mean">교향곡, 심포니</span><span class="vocab-derive">symphonic (adj. 교향곡의)</span></div>
+        <div class="vocab-item"><span class="vocab-word">inherently</span><span class="vocab-pos">adv.</span><span class="vocab-mean">본질적으로, 본래</span><span class="vocab-derive">inherent (adj. 내재된), inherence (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">exclusively</span><span class="vocab-pos">adv.</span><span class="vocab-mean">오직, 독점적으로</span><span class="vocab-derive">exclude (v. 배제하다), exclusion (n.), exclusive (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">exclusionary</span><span class="vocab-pos">adj.</span><span class="vocab-mean">배타적인, 배제하는</span><span class="vocab-derive">exclusion (n. 배제)</span></div>
+        <div class="vocab-item"><span class="vocab-word">elite</span><span class="vocab-pos">n.</span><span class="vocab-mean">엘리트, 상류층</span><span class="vocab-derive">elitism (n. 엘리트주의)</span></div>
+        <div class="vocab-item"><span class="vocab-word">dynamics</span><span class="vocab-pos">n.</span><span class="vocab-mean">(음악) 강약, 다이내믹; 역학</span><span class="vocab-derive">dynamic (adj. 역동적인)</span></div>
+        <div class="vocab-item"><span class="vocab-word">passage</span><span class="vocab-pos">n.</span><span class="vocab-mean">(음악·글의) 한 부분, 악절; 통로</span><span class="vocab-derive">pass (v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">harmonically</span><span class="vocab-pos">adv.</span><span class="vocab-mean">화성적으로, 조화롭게</span><span class="vocab-derive">harmony (n.), harmonic (adj.), harmonize (v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">appreciate</span><span class="vocab-pos">v.</span><span class="vocab-mean">(가치를) 감상하다, 인식하다; 감사하다</span><span class="vocab-derive">appreciation (n.), appreciative (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">acoustically</span><span class="vocab-pos">adv.</span><span class="vocab-mean">음향적으로</span><span class="vocab-derive">acoustic (adj.), acoustics (n. 음향학)</span></div>
+        <div class="vocab-item"><span class="vocab-word">restrictive</span><span class="vocab-pos">adj.</span><span class="vocab-mean">제한하는, 제약적인</span><span class="vocab-derive">restrict (v.), restriction (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">emergence</span><span class="vocab-pos">n.</span><span class="vocab-mean">출현, 등장</span><span class="vocab-derive">emerge (v.), emergent (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">ubiquitous</span><span class="vocab-pos">adj.</span><span class="vocab-mean">어디에나 있는, 편재하는</span><span class="vocab-derive">ubiquity (n. 편재성)</span></div>
+        <div class="vocab-item"><span class="vocab-word">come into existence</span><span class="vocab-pos">phr.</span><span class="vocab-mean">존재하게 되다, 생겨나다</span><span class="vocab-derive">existence (n.), exist (v.)</span></div>
+      </div>
+    </div>
+
+    <!-- ④ 전문해석 -->
+    <div class="tab-pane" id="p93-t4">
+      <h2 class="section-h">④ 전문 해석 (Translation)</h2>
+      <div class="card">
+        <p class="translation">1900년경, 클래식 음악의 공연장이 변화하면서 클래식 청중들은 더 이상 공연 중에 소리치고, 먹고, 잡담하는 것이 허용되지 않았다. 이는 새로운 교향곡 홀과 오페라 하우스에서 하층 계급을 배제하기 위한 한 가지 방법이었다(그들은 본래 시끄럽다고 여겨졌기 때문이다). 많은 경우 모두를 위한 것이었던 음악이 이제는 오로지 엘리트만을 위한 것이 되었다. 이 배타적 정책은 작곡되는 음악에도 영향을 미쳤는데, 이제 아무도 말하거나, 먹거나, 춤추지 않게 되었으므로, 음악은 극단적인 강약(다이내믹)을 가질 수 있었다. 작곡가들은 모든 세부 사항이 청중에게 들릴 것임을 알았기에, 매우 조용한 악절도 이제 작곡될 수 있었고, 화성적으로 복잡한 악절도 마찬가지로 감상될 수 있었다. 20세기 클래식 음악의 상당 부분은 사회적·음향적으로 제한된 그런 공간 안에서만 작동할 수 있었고(또한 그러한 공간을 위해서 작곡되었다). 이전에는 존재하지 않던 새로운 종류의 음악이 탄생한 것이며, 훗날 등장하고 정교해질 녹음 기술이 이 음악을 더 쉽게 접할 수 있고 어디에나 존재하는 것으로 만들어 줄 것이었다.</p>
+      </div>
+    </div>
+
+    <!-- ⑤ 주제·요지 -->
+    <div class="tab-pane" id="p93-t5">
+      <h2 class="section-h">⑤ 주제·요지·구조</h2>
+      <div class="card">
+        <div class="topic-block">
+          <span class="topic-label">TOPIC 주제</span>
+          <p class="topic-text">1900년경 클래식 공연장의 사회적·음향적 변화가 20세기 클래식 음악의 작곡 양식에 미친 영향</p>
+        </div>
+        <div class="topic-block">
+          <span class="topic-label">MAIN IDEA 요지</span>
+          <p class="topic-text">공연장이 조용해지고 엘리트 중심으로 재편되면서, 작곡가들은 극단적 다이내믹과 복잡한 화성을 사용할 수 있게 되었고, 이로 인해 이전에는 존재하지 않던 새로운 양식의 클래식 음악이 등장했다.</p>
+        </div>
+        <div class="topic-block">
+          <span class="topic-label">STRUCTURE 구조</span>
+          <div class="structure-step"><span class="step-tag">[도입]</span> 1900년경 공연장의 청중 행동 규제 — 정숙 강요</div>
+          <div class="structure-step"><span class="step-tag">[전개1]</span> 규제의 사회적 동기 — 하층 계급 배제, 엘리트 전용화</div>
+          <div class="structure-step"><span class="step-tag">[전개2]</span> 음악 자체에 미친 영향 — 극단적 다이내믹과 복잡한 화성의 가능</div>
+          <div class="structure-step"><span class="step-tag">[결론]</span> 새로운 종류의 음악 출현 + 녹음 기술이 이를 보편화</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑥ 배경지식 -->
+    <div class="tab-pane" id="p93-t6">
+      <h2 class="section-h">⑥ 배경지식 (Background Knowledge)</h2>
+      <div class="bg-knowledge">
+        <h4>🎼 19세기 말~20세기 초 콘서트홀 문화의 변화</h4>
+        <p>18~19세기 초까지만 해도 오페라 하우스와 콘서트홀은 사교의 장이었다. 관객들은 공연 중에 식사하고 카드 게임을 하거나, 박스석에서 대화를 나누는 것이 일반적이었으며, 마음에 드는 악장이 끝나면 박수를 치고 앙코르를 요구하기도 했다. 그러나 19세기 후반 리하르트 바그너(Wagner)와 같은 작곡가들이 "작품에 대한 경건한 집중"을 요구하며 객석 조명을 어둡게 하고, 박수를 막간으로 제한하는 등 오늘날 우리가 아는 콘서트홀 에티켓을 정착시켰다.</p>
+
+        <h4>🎵 다이내믹(Dynamics)이란?</h4>
+        <p>음악에서 다이내믹은 소리의 세기·강약을 의미한다. ppp(극도로 여리게)부터 fff(극도로 강하게)까지의 표시가 있으며, 청중이 조용해지자 작곡가들은 ppp 같은 극도로 여린 소리도 의도대로 들리게 할 수 있게 되었다. 말러(Mahler), 드뷔시(Debussy), 베르크(Berg) 같은 20세기 작곡가들의 작품은 이런 정숙한 환경을 전제로 작곡되었다.</p>
+
+        <h4>🏛️ "엘리트의 음악"으로서의 클래식</h4>
+        <p>이 시기 입장권 가격, 격식 있는 복장 요구, 정숙 의무 등은 자연스럽게 노동자 계급의 접근을 어렵게 만들었다. 본문은 이러한 사회적 배제(exclusion)가 단순한 "예의"의 문제가 아니라 의도된 계급 분리의 도구였음을 지적한다.</p>
+
+        <h4>📻 녹음 기술과 음악의 민주화</h4>
+        <p>1877년 에디슨의 축음기 발명, 1948년 LP 레코드, 20세기 후반 CD와 디지털 스트리밍을 거치면서, 콘서트홀에 가지 않고도 누구나 클래식 음악을 들을 수 있게 되었다. 본문 마지막 문장의 "ubiquitous(편재하는)"는 이러한 기술적 보편화를 가리킨다.</p>
+      </div>
+    </div>
+
+    <!-- ⑦ 변형문제 -->
+    <div class="tab-pane" id="p93-t7">
+      <h2 class="section-h">⑦ 변형문제 (Practice Quiz)</h2>
+
+      <!-- Q1: 주제 추론 -->
+      <div class="quiz-q">
+        <div class="quiz-num">Q1. 다음 글의 주제로 가장 적절한 것은?<span class="quiz-type">주제 추론</span></div>
+        <div class="quiz-prompt">윗글의 핵심 내용을 가장 잘 나타내는 것을 고르시오.</div>
+        <ul class="opts" id="p93-q1">
+          <li onclick="check(this,'p93','q1',false)"><span class="opt-num">①</span>녹음 기술의 발전이 클래식 음악에 미친 부정적 영향</li>
+          <li onclick="check(this,'p93','q1',false)"><span class="opt-num">②</span>오페라 하우스 건축 양식의 시대별 변화</li>
+          <li onclick="check(this,'p93','q1',true)"><span class="opt-num">③</span>공연장의 사회·음향적 변화가 20세기 클래식 음악 작곡에 끼친 영향</li>
+          <li onclick="check(this,'p93','q1',false)"><span class="opt-num">④</span>클래식 음악의 대중화와 그 한계</li>
+          <li onclick="check(this,'p93','q1',false)"><span class="opt-num">⑤</span>작곡가와 청중 간의 의사소통 단절 문제</li>
+        </ul>
+        <div class="feedback" id="p93-q1-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p93','q1')">↺ 다시 풀기</button>
+      </div>
+
+      <!-- Q2: 빈칸 추론 -->
+      <div class="quiz-q">
+        <div class="quiz-num">Q2. 다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="quiz-type">빈칸 추론</span></div>
+        <div class="quiz-passage">
+          Composers knew that every detail would be heard, so very quiet passages could now be written, and harmonically complex passages could be appreciated as well. Much of twentieth-century classical music could only work in (and was written for) the socially and acoustically <em>__________</em> spaces.
+        </div>
+        <ul class="opts" id="p93-q2">
+          <li onclick="check(this,'p93','q2',false)"><span class="opt-num">①</span>open and accessible</li>
+          <li onclick="check(this,'p93','q2',false)"><span class="opt-num">②</span>diverse and inclusive</li>
+          <li onclick="check(this,'p93','q2',true)"><span class="opt-num">③</span>restrictive</li>
+          <li onclick="check(this,'p93','q2',false)"><span class="opt-num">④</span>noisy and chaotic</li>
+          <li onclick="check(this,'p93','q2',false)"><span class="opt-num">⑤</span>traditional and conservative</li>
+        </ul>
+        <div class="feedback" id="p93-q2-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p93','q2')">↺ 다시 풀기</button>
+      </div>
+
+      <!-- Q3: 어법 -->
+      <div class="quiz-q">
+        <div class="quiz-num">Q3. 다음 글의 밑줄 친 부분 중 어법상 틀린 것은?<span class="quiz-type">어법</span></div>
+        <div class="quiz-passage">
+          Around 1900, classical audiences ① <u>were no longer allowed</u> to shout, eat, and chat during a performance. This was a way of ② <u>keeping</u> the lower classes out of the new symphony halls. Music that in many instances ③ <u>used to be</u> for all was now exclusively for the elite. This exclusionary policy affected the music ④ <u>was being written</u>, too. Composers knew that every detail ⑤ <u>would be heard</u>.
+        </div>
+        <ul class="opts" id="p93-q3">
+          <li onclick="check(this,'p93','q3',false)"><span class="opt-num">①</span>were no longer allowed</li>
+          <li onclick="check(this,'p93','q3',false)"><span class="opt-num">②</span>keeping</li>
+          <li onclick="check(this,'p93','q3',false)"><span class="opt-num">③</span>used to be</li>
+          <li onclick="check(this,'p93','q3',true)"><span class="opt-num">④</span>was being written</li>
+          <li onclick="check(this,'p93','q3',false)"><span class="opt-num">⑤</span>would be heard</li>
+        </ul>
+        <div class="feedback" id="p93-q3-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p93','q3')">↺ 다시 풀기</button>
+      </div>
+
+      <!-- Q4: 내용 불일치 -->
+      <div class="quiz-q">
+        <div class="quiz-num">Q4. 윗글의 내용과 일치하지 <strong>않는</strong> 것은?<span class="quiz-type">내용 일치</span></div>
+        <ul class="opts" id="p93-q4">
+          <li onclick="check(this,'p93','q4',false)"><span class="opt-num">①</span>1900년경부터 청중은 공연 중 소리치거나 먹는 것이 금지되었다.</li>
+          <li onclick="check(this,'p93','q4',false)"><span class="opt-num">②</span>새 콘서트홀에서 하층 계급의 출입을 제한하려는 의도가 있었다.</li>
+          <li onclick="check(this,'p93','q4',false)"><span class="opt-num">③</span>조용한 환경 덕분에 매우 여린 악절이 작곡 가능해졌다.</li>
+          <li onclick="check(this,'p93','q4',true)"><span class="opt-num">④</span>20세기 클래식 음악은 어떤 공간에서나 자유롭게 연주될 수 있었다.</li>
+          <li onclick="check(this,'p93','q4',false)"><span class="opt-num">⑤</span>녹음 기술의 발달은 새로운 음악을 더 널리 퍼뜨리는 데 기여했다.</li>
+        </ul>
+        <div class="feedback" id="p93-q4-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p93','q4')">↺ 다시 풀기</button>
+      </div>
+
+      <!-- 서술형 1: 빈칸 요약 -->
+      <div class="essay-q">
+        <div class="quiz-num">서술형 1. 빈칸 요약<span class="quiz-type">빈칸 채우기</span></div>
+        <div class="essay-cond">
+          <strong>[조건]</strong> 본문에서 알맞은 단어 한 개씩을 찾아 빈칸 (A), (B)에 쓰시오.
+        </div>
+        <div class="quiz-passage">
+          Around 1900, the new rules of silence in concert halls were partly intended to <strong>(A)</strong> __________ the lower classes from these venues. Because no one was making noise, composers were able to write music with <strong>(B)</strong> __________ dynamics, including very quiet and harmonically complex passages.
+        </div>
+        <textarea class="essay-area" placeholder="(A) ___________________&#10;(B) ___________________"></textarea>
+        <button type="button" class="ans-toggle" onclick="toggleAns('p93-e1')">모범답안 보기 ▼</button>
+        <div class="ans-box" id="p93-e1">
+          <strong>모범답안</strong><br>
+          (A) <strong>exclude</strong> (또는 keep)<br>
+          (B) <strong>extreme</strong><br>
+          <em style="color:#555">→ 본문 ②문장 "keeping the lower classes out of"와 ④문장 "the music could have extreme dynamics"에서 찾을 수 있음.</em>
+        </div>
+      </div>
+
+      <!-- 서술형 2: 영작 -->
+      <div class="essay-q">
+        <div class="quiz-num">서술형 2. 영어 서술<span class="quiz-type">영작</span></div>
+        <div class="essay-cond">
+          <strong>[조건]</strong> 본문의 내용을 바탕으로, 1900년경 공연장의 변화가 작곡가들에게 어떤 새로운 가능성을 열어주었는지 완전한 영어 문장(30단어 내외)으로 서술하시오.
+        </div>
+        <textarea class="essay-area" placeholder="Write your answer here in a complete English sentence (around 30 words)."></textarea>
+        <button type="button" class="ans-toggle" onclick="toggleAns('p93-e2')">모범답안 보기 ▼</button>
+        <div class="ans-box" id="p93-e2">
+          <strong>모범답안</strong><br>
+          Because audiences were no longer allowed to make noise during performances, composers could write music with extreme dynamics, including very quiet passages and harmonically complex passages that would be appreciated in the new silent concert halls.<br>
+          <em style="color:#555">(약 32단어)</em>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ============== E-94 패널 ============== -->
+<section class="panel" id="p94">
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="pid-tag">E-94</span>
+      <h1>FOMO and the Scarcity Error</h1>
+    </div>
+    <div class="academy">에듀케레 영수학원 · 천일문 독해 Essential</div>
+  </div>
+  <div class="tabs">
+    <button type="button" class="tab-btn active" onclick="showTab('p94','t1')"><span class="tab-num">①</span>전문</button>
+    <button type="button" class="tab-btn" onclick="showTab('p94','t2')"><span class="tab-num">②</span>문장분석</button>
+    <button type="button" class="tab-btn" onclick="showTab('p94','t3')"><span class="tab-num">③</span>핵심단어·표현</button>
+    <button type="button" class="tab-btn" onclick="showTab('p94','t4')"><span class="tab-num">④</span>전문해석</button>
+    <button type="button" class="tab-btn" onclick="showTab('p94','t5')"><span class="tab-num">⑤</span>주제·요지</button>
+    <button type="button" class="tab-btn" onclick="showTab('p94','t6')"><span class="tab-num">⑥</span>배경지식</button>
+    <button type="button" class="tab-btn" onclick="showTab('p94','t7')"><span class="tab-num">⑦</span>변형문제</button>
+  </div>
+  <div class="content">
+
+    <!-- ① 전문 -->
+    <div class="tab-pane active" id="p94-t1">
+      <h2 class="section-h">① 전문 (Full Passage)</h2>
+      <div class="full-passage-meta">
+        <span>총 11문장 분석</span><span>약 175 words</span><span>주제: 심리학·행동경제학</span>
+      </div>
+      <div class="full-passage">
+        The Fear of Missing Out (FOMO) is a trending psychological phenomenon of our time, intensified by perceived scarcity. In fact, the scarcity error is a common occurrence. Whenever my friend, a real estate agent, has an interested buyer who cannot decide, she calls and says: &ldquo;A doctor from London saw the land yesterday. He liked it a lot. What about you?&rdquo; The doctor from London&mdash;sometimes it&rsquo;s a professor or a banker&mdash;is, of course, fictitious. The effect is very real, though: the prospect closes the deal. From an objective perspective, it doesn&rsquo;t make sense. The logical approach to deciding whether to buy the land should be based on the individual&rsquo;s genuine interest and the set price, independent of any fabricated stories about other interested parties. Nevertheless, human behavior often deviates from pure rationality. The prospect&rsquo;s decision is influenced by the psychological concept of scarcity, which makes them feel that the opportunity is limited or slipping away, prompting them to take action and close the deal, even though this may not be entirely rational.
+      </div>
+    </div>
+
+    <!-- ② 문장분석 -->
+    <div class="tab-pane" id="p94-t2">
+      <h2 class="section-h">② 문장 분석 (Sentence Analysis)</h2>
+
+      <div class="sent-block">
+        <div class="sent-num">①</div>
+        <div class="en-box">The Fear of Missing Out (FOMO) is a trending psychological phenomenon of our time, <u>intensified</u> by perceived scarcity.</div>
+        <div class="literal">
+          <span class="literal-en">The Fear of Missing Out (FOMO) / is a trending psychological phenomenon / of our time, / intensified by perceived scarcity.</span>
+          <span class="literal-ko">▶ 놓치는 것에 대한 두려움(FOMO)은 / 유행하는 심리 현상이다 / 우리 시대의, / 인식된 희소성에 의해 심화된.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">과거분사 후치 수식</span> ▶ <span class="gr-ex">a phenomenon ... intensified by</span> ★ <span class="gr-pt">phenomenon을 수식; "which is intensified"의 축약</span></li>
+          <li>◆ <span class="gr-name">동명사구 주어 (Missing Out)</span> ▶ <span class="gr-ex">The Fear of Missing Out</span> ★ <span class="gr-pt">전치사 of의 목적어로 동명사구; "놓치는 것"</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">②</div>
+        <div class="en-box">In fact, the scarcity error <em>is</em> a common occurrence.</div>
+        <div class="literal">
+          <span class="literal-en">In fact, / the scarcity error / is a common occurrence.</span>
+          <span class="literal-ko">▶ 사실, / 희소성 오류는 / 흔한 현상이다.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">담화 표지 In fact</span> ▶ <span class="gr-ex">In fact, ...</span> ★ <span class="gr-pt">앞 문장의 일반화·강조; "실제로/사실"</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">③</div>
+        <div class="en-box"><em>Whenever</em> my friend, a real estate agent, has an interested buyer <u>who</u> cannot decide, she calls and says:</div>
+        <div class="literal">
+          <span class="literal-en">Whenever my friend, / a real estate agent, / has an interested buyer / who cannot decide, / she calls and says:</span>
+          <span class="literal-ko">▶ ~할 때마다 내 친구가, / 부동산 중개인인, / 관심 있는 구매자를 가지면 / 결정하지 못하는, / 그녀는 전화하여 말한다:</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">복합관계부사 whenever</span> ▶ <span class="gr-ex">Whenever ... has an interested buyer</span> ★ <span class="gr-pt">"~할 때마다(=at any time when)"; 부사절 도입</span></li>
+          <li>◆ <span class="gr-name">동격 콤마 (a real estate agent)</span> ▶ <span class="gr-ex">my friend, a real estate agent,</span> ★ <span class="gr-pt">my friend = a real estate agent; 콤마로 묶인 부연 설명</span></li>
+          <li>◆ <span class="gr-name">주격 관계대명사 who</span> ▶ <span class="gr-ex">a buyer who cannot decide</span> ★ <span class="gr-pt">선행사: buyer (사람) → who 사용</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">④</div>
+        <div class="en-box">&ldquo;A doctor from London <u>saw</u> the land yesterday.&rdquo;</div>
+        <div class="literal">
+          <span class="literal-en">A doctor from London / saw the land / yesterday.</span>
+          <span class="literal-ko">▶ 런던의 한 의사가 / 그 땅을 보았다 / 어제.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">단순 과거시제</span> ▶ <span class="gr-ex">saw the land yesterday</span> ★ <span class="gr-pt">yesterday 등 명백한 과거 시간 부사 → 단순 과거; 현재완료 불가</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑤</div>
+        <div class="en-box">&ldquo;He liked <em>it</em> a lot.&rdquo;</div>
+        <div class="literal">
+          <span class="literal-en">He liked it / a lot.</span>
+          <span class="literal-ko">▶ 그는 그것을 좋아했다 / 매우.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">대명사 it의 지시</span> ▶ <span class="gr-ex">He liked it</span> ★ <span class="gr-pt">it = the land; 대명사가 지시하는 명사 파악이 출제 포인트</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑥</div>
+        <div class="en-box">&ldquo;<em>What about</em> you?&rdquo;</div>
+        <div class="literal">
+          <span class="literal-en">What about you?</span>
+          <span class="literal-ko">▶ 당신은 어때요?</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">관용 표현 What about ~?</span> ▶ <span class="gr-ex">What about you?</span> ★ <span class="gr-pt">"~은 어떤가요?"; How about과 거의 동일하게 쓰임</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑦</div>
+        <div class="en-box">The doctor from London&mdash;<em>sometimes</em> it&rsquo;s a professor or a banker&mdash;is, of course, fictitious.</div>
+        <div class="literal">
+          <span class="literal-en">The doctor from London / — sometimes it's a professor or a banker — / is, of course, fictitious.</span>
+          <span class="literal-ko">▶ 런던의 그 의사는 / — 때로는 교수나 은행원이기도 한 — / 물론, 가공의 인물이다.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">대시(—) 삽입 구문</span> ▶ <span class="gr-ex">The doctor — sometimes it's a professor — is fictitious</span> ★ <span class="gr-pt">주어와 동사 사이에 부연 설명 삽입; 주어(The doctor)와 동사(is) 연결 파악</span></li>
+          <li>◆ <span class="gr-name">삽입어구 of course</span> ▶ <span class="gr-ex">is, of course, fictitious</span> ★ <span class="gr-pt">화자의 태도 부사; 콤마로 분리</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑧</div>
+        <div class="en-box">The effect is very real, <em>though</em>: the prospect <u>closes</u> the deal.</div>
+        <div class="literal">
+          <span class="literal-en">The effect is very real, though: / the prospect closes the deal.</span>
+          <span class="literal-ko">▶ 그 효과는 매우 실제적이다, 그러나: / 그 잠재 고객은 거래를 성사시킨다.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">문말 부사 though (그러나)</span> ▶ <span class="gr-ex">The effect is very real, though</span> ★ <span class="gr-pt">"however"와 같은 의미; 문장 끝에 위치하면 부사로 사용</span></li>
+          <li>◆ <span class="gr-name">콜론(:)의 용법</span> ▶ <span class="gr-ex">very real, though: the prospect closes ...</span> ★ <span class="gr-pt">앞 내용에 대한 구체화·예시 도입</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑨</div>
+        <div class="en-box">From an objective perspective, <em>it</em> doesn&rsquo;t make sense.</div>
+        <div class="literal">
+          <span class="literal-en">From an objective perspective, / it doesn't make sense.</span>
+          <span class="literal-ko">▶ 객관적 관점에서 / 그것은 말이 되지 않는다.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">관용 표현 make sense</span> ▶ <span class="gr-ex">it doesn't make sense</span> ★ <span class="gr-pt">"이치에 맞다, 말이 되다"; 부정형 자주 출제</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑩</div>
+        <div class="en-box">The logical approach to <u>deciding</u> whether to buy the land should be based on the individual&rsquo;s genuine interest and the set price, <em>independent of</em> any fabricated stories about other interested parties.</div>
+        <div class="literal">
+          <span class="literal-en">The logical approach / to deciding whether to buy the land / should be based on / the individual's genuine interest and the set price, / independent of any fabricated stories / about other interested parties.</span>
+          <span class="literal-ko">▶ 논리적 접근은 / 그 땅을 살지 말지를 결정하는 / 기반해야 한다 / 개인의 진정한 관심과 정해진 가격에, / 어떤 꾸며낸 이야기와도 무관하게 / 다른 관심 있는 당사자들에 관한.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">전치사 to + 동명사 (deciding)</span> ▶ <span class="gr-ex">approach to deciding</span> ★ <span class="gr-pt">"approach to V-ing(~에 대한 접근)"; to부정사가 아닌 전치사 to</span></li>
+          <li>◆ <span class="gr-name">whether to V (간접의문)</span> ▶ <span class="gr-ex">whether to buy the land</span> ★ <span class="gr-pt">"~할지 말지"; whether + to부정사 구조</span></li>
+          <li>◆ <span class="gr-name">be based on (수동 + 전치사)</span> ▶ <span class="gr-ex">should be based on ...</span> ★ <span class="gr-pt">"~에 기반하다"; base A on B의 수동형</span></li>
+          <li>◆ <span class="gr-name">independent of (전치사구)</span> ▶ <span class="gr-ex">independent of any fabricated stories</span> ★ <span class="gr-pt">"~와 무관한"; 형용사가 부대상황으로 사용된 분사구문 변형</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑪</div>
+        <div class="en-box">Nevertheless, human behavior often <u>deviates from</u> pure rationality. The prospect&rsquo;s decision is <u>influenced by</u> the psychological concept of scarcity, <em>which</em> makes them feel that the opportunity is limited or slipping away, <u>prompting</u> them to take action and close the deal, even though this may not be entirely rational.</div>
+        <div class="literal">
+          <span class="literal-en">Nevertheless, / human behavior / often deviates from pure rationality. / The prospect's decision is influenced / by the psychological concept of scarcity, / which makes them feel / that the opportunity is limited or slipping away, / prompting them to take action / and close the deal, / even though this may not be entirely rational.</span>
+          <span class="literal-ko">▶ 그럼에도 불구하고, / 인간의 행동은 / 종종 순수한 합리성에서 벗어난다. / 잠재 고객의 결정은 영향을 받는다 / 희소성이라는 심리적 개념에 의해, / 그것은 그들로 하여금 느끼게 만든다 / 기회가 제한적이거나 사라지고 있다고, / 그들에게 행동을 취하도록 촉구하면서 / 그리고 거래를 성사시키도록, / 비록 이것이 완전히 합리적이지는 않을지라도.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">계속적 용법 관계대명사 which</span> ▶ <span class="gr-ex">..., which makes them feel ...</span> ★ <span class="gr-pt">콤마+which → 앞 절 전체나 the concept of scarcity를 선행사로 함</span></li>
+          <li>◆ <span class="gr-name">사역동사 make + 목적어 + 동사원형</span> ▶ <span class="gr-ex">makes them feel that ...</span> ★ <span class="gr-pt">"make + 사람 + V원형": ~하게 만들다; feel 뒤 명사절 that 따라옴</span></li>
+          <li>◆ <span class="gr-name">분사구문 prompting</span> ▶ <span class="gr-ex">prompting them to take action</span> ★ <span class="gr-pt">분사구문이 결과·연속동작 표현; "그래서 ~하게 만들다"</span></li>
+          <li>◆ <span class="gr-name">양보 부사절 even though</span> ▶ <span class="gr-ex">even though this may not be ...</span> ★ <span class="gr-pt">"비록 ~일지라도"; although보다 강한 양보</span></li>
+        </ul>
+      </div>
+
+      <p style="font-size:12px;color:#888;margin-top:20px;text-align:center">※ 본 분석에서는 본문의 마지막 두 문장(Nevertheless, ...; The prospect's decision is ...)을 의미 단위로 함께 묶어 ⑪번으로 처리하였습니다. 원문은 마침표 기준 마지막 두 문장입니다.</p>
+    </div>
+
+    <!-- ③ 핵심단어 -->
+    <div class="tab-pane" id="p94-t3">
+      <h2 class="section-h">③ 핵심 단어 및 표현</h2>
+      <div class="card">
+        <div class="vocab-item"><span class="vocab-word">phenomenon</span><span class="vocab-pos">n.</span><span class="vocab-mean">현상 (pl. phenomena)</span><span class="vocab-derive">phenomenal (adj. 놀라운)</span></div>
+        <div class="vocab-item"><span class="vocab-word">intensify</span><span class="vocab-pos">v.</span><span class="vocab-mean">강화하다, 심화하다</span><span class="vocab-derive">intense (adj.), intensity (n. 강도)</span></div>
+        <div class="vocab-item"><span class="vocab-word">perceive</span><span class="vocab-pos">v.</span><span class="vocab-mean">인식하다, 감지하다</span><span class="vocab-derive">perception (n.), perceived (adj. 인식된)</span></div>
+        <div class="vocab-item"><span class="vocab-word">scarcity</span><span class="vocab-pos">n.</span><span class="vocab-mean">희소성, 부족</span><span class="vocab-derive">scarce (adj. 부족한)</span></div>
+        <div class="vocab-item"><span class="vocab-word">occurrence</span><span class="vocab-pos">n.</span><span class="vocab-mean">발생, 일어남</span><span class="vocab-derive">occur (v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">real estate agent</span><span class="vocab-pos">n.</span><span class="vocab-mean">부동산 중개인</span><span class="vocab-derive">real estate (부동산)</span></div>
+        <div class="vocab-item"><span class="vocab-word">prospect</span><span class="vocab-pos">n.</span><span class="vocab-mean">잠재 고객; 가능성, 전망</span><span class="vocab-derive">prospective (adj. 장래의)</span></div>
+        <div class="vocab-item"><span class="vocab-word">fictitious</span><span class="vocab-pos">adj.</span><span class="vocab-mean">가공의, 허구의</span><span class="vocab-derive">fiction (n. 소설)</span></div>
+        <div class="vocab-item"><span class="vocab-word">close the deal</span><span class="vocab-pos">phr.</span><span class="vocab-mean">거래를 성사시키다</span><span class="vocab-derive">deal (n. 거래)</span></div>
+        <div class="vocab-item"><span class="vocab-word">objective</span><span class="vocab-pos">adj./n.</span><span class="vocab-mean">객관적인; 목표</span><span class="vocab-derive">objectivity (n.); 반의어: subjective</span></div>
+        <div class="vocab-item"><span class="vocab-word">make sense</span><span class="vocab-pos">phr.</span><span class="vocab-mean">말이 되다, 이치에 맞다</span><span class="vocab-derive">sense (n. 의미)</span></div>
+        <div class="vocab-item"><span class="vocab-word">genuine</span><span class="vocab-pos">adj.</span><span class="vocab-mean">진정한, 진짜의</span><span class="vocab-derive">genuinely (adv.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">independent of</span><span class="vocab-pos">phr.</span><span class="vocab-mean">~과 무관한, ~에 의존하지 않는</span><span class="vocab-derive">independence (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">fabricate</span><span class="vocab-pos">v.</span><span class="vocab-mean">날조하다, 꾸며내다; 제작하다</span><span class="vocab-derive">fabrication (n.), fabricated (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">deviate</span><span class="vocab-pos">v.</span><span class="vocab-mean">벗어나다, 일탈하다 (from)</span><span class="vocab-derive">deviation (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">rationality</span><span class="vocab-pos">n.</span><span class="vocab-mean">합리성, 이성</span><span class="vocab-derive">rational (adj.), rationally (adv.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">slip away</span><span class="vocab-pos">phr.</span><span class="vocab-mean">사라지다, 빠져나가다</span><span class="vocab-derive">slip (v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">prompt</span><span class="vocab-pos">v./adj.</span><span class="vocab-mean">~하도록 촉구하다; 즉각적인</span><span class="vocab-derive">promptly (adv.)</span></div>
+      </div>
+    </div>
+
+    <!-- ④ 전문해석 -->
+    <div class="tab-pane" id="p94-t4">
+      <h2 class="section-h">④ 전문 해석 (Translation)</h2>
+      <div class="card">
+        <p class="translation">놓치는 것에 대한 두려움(FOMO)은 우리 시대의 유행하는 심리 현상으로, 인식된 희소성에 의해 더욱 심화된다. 사실 희소성 오류는 흔히 일어나는 현상이다. 부동산 중개인인 내 친구는 결정을 내리지 못하는 관심 있는 매수자를 만날 때마다, 그에게 전화를 걸어 이렇게 말한다. "런던에서 온 한 의사가 어제 그 땅을 보고 갔어요. 아주 마음에 들어 했답니다. 당신은 어떠세요?" 런던의 그 의사 — 때로는 교수나 은행원이기도 하다 — 는 물론 가공의 인물이다. 그러나 그 효과는 매우 실제적이어서, 잠재 매수자는 거래를 성사시킨다. 객관적으로 보면 이는 말이 되지 않는다. 그 땅을 살지 말지를 결정하는 논리적 접근은, 다른 관심 있는 당사자들에 관한 어떤 꾸며낸 이야기와도 무관하게, 그 사람 자신의 진정한 관심과 정해진 가격에 근거해야 한다. 그럼에도 불구하고 인간의 행동은 종종 순수한 합리성에서 벗어난다. 잠재 매수자의 결정은 희소성이라는 심리적 개념의 영향을 받는데, 이는 그들에게 기회가 제한되어 있거나 사라지고 있다는 느낌을 갖게 하여, 비록 그것이 전적으로 합리적이지 않을지라도 그들이 행동을 취해 거래를 성사시키도록 부추긴다.</p>
+      </div>
+    </div>
+
+    <!-- ⑤ 주제·요지 -->
+    <div class="tab-pane" id="p94-t5">
+      <h2 class="section-h">⑤ 주제·요지·구조</h2>
+      <div class="card">
+        <div class="topic-block">
+          <span class="topic-label">TOPIC 주제</span>
+          <p class="topic-text">희소성 인식이 인간의 의사결정에 미치는 비합리적 영향(FOMO와 희소성 오류)</p>
+        </div>
+        <div class="topic-block">
+          <span class="topic-label">MAIN IDEA 요지</span>
+          <p class="topic-text">사람들은 기회가 제한되거나 사라지고 있다는 느낌이 들면, 객관적·논리적 판단에서 벗어나 비합리적인 결정을 내리는 경향이 있다.</p>
+        </div>
+        <div class="topic-block">
+          <span class="topic-label">STRUCTURE 구조</span>
+          <div class="structure-step"><span class="step-tag">[도입]</span> FOMO 정의 + 희소성 오류 일반화</div>
+          <div class="structure-step"><span class="step-tag">[예시]</span> 부동산 중개인의 "런던 의사" 거짓말 사례</div>
+          <div class="structure-step"><span class="step-tag">[분석]</span> 객관적으로는 비논리적이지만 효과는 실제적임</div>
+          <div class="structure-step"><span class="step-tag">[결론]</span> 인간 행동은 합리성에서 자주 벗어남 — 희소성 심리가 결정을 좌우</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑥ 배경지식 -->
+    <div class="tab-pane" id="p94-t6">
+      <h2 class="section-h">⑥ 배경지식 (Background Knowledge)</h2>
+      <div class="bg-knowledge">
+        <h4>📱 FOMO (Fear of Missing Out)</h4>
+        <p>2004년 하버드 비즈니스 스쿨 학생 패트릭 맥기니스(Patrick McGinnis)가 처음 사용한 용어로, "다른 사람이 누리는 좋은 것을 자신은 놓치고 있다"는 불안감을 의미한다. SNS 시대에 폭발적으로 확산되었으며, 인스타그램·페이스북에서 친구들의 즐거운 사진을 보며 느끼는 소외감이 대표적이다. 본문에서는 이 심리가 단순한 불안이 아니라 실제 구매·투자 결정까지 좌우한다고 본다.</p>
+
+        <h4>📚 희소성 원칙 (The Scarcity Principle)</h4>
+        <p>심리학자 로버트 치알디니(Robert Cialdini)가 그의 저서 <em>「설득의 심리학(Influence)」</em>에서 제시한 6가지 설득 원리 중 하나. "물량이 한정되어 있을 때, 마감 임박일 때, 다른 사람이 관심 가질 때"에 사람들은 그 대상의 가치를 실제 가치보다 더 높게 평가한다. "오늘만 특가", "단 5개 남음", "마감 1시간 전" 같은 마케팅 문구가 모두 이 원리를 활용한 것이다.</p>
+
+        <h4>🧠 행동경제학과 비합리성</h4>
+        <p>전통 경제학은 인간을 "합리적 의사결정자(homo economicus)"로 가정하지만, 대니얼 카너먼(Daniel Kahneman)과 아모스 트버스키(Amos Tversky)의 연구(전망이론, Prospect Theory)는 인간이 손실 회피(loss aversion)와 같은 심리적 편향에 영향을 받음을 입증했다. 카너먼은 이 공로로 2002년 노벨 경제학상을 수상했다. 본문은 이러한 비합리성을 부동산 거래 사례로 풀어낸 것이다.</p>
+
+        <h4>💼 본문의 화자: 룰프 도벨리</h4>
+        <p>본 글의 출처는 스위스 작가 룰프 도벨리(Rolf Dobelli)의 베스트셀러 <em>「The Art of Thinking Clearly(스마트한 생각들)」</em>로 추정된다. 그는 인간이 흔히 빠지는 99가지 인지적 오류를 알기 쉽게 정리한 것으로 유명하다.</p>
+      </div>
+    </div>
+
+    <!-- ⑦ 변형문제 -->
+    <div class="tab-pane" id="p94-t7">
+      <h2 class="section-h">⑦ 변형문제 (Practice Quiz)</h2>
+
+      <!-- Q1: 주제 -->
+      <div class="quiz-q">
+        <div class="quiz-num">Q1. 다음 글의 주제로 가장 적절한 것은?<span class="quiz-type">주제 추론</span></div>
+        <ul class="opts" id="p94-q1">
+          <li onclick="check(this,'p94','q1',false)"><span class="opt-num">①</span>부동산 중개업의 윤리적 문제점</li>
+          <li onclick="check(this,'p94','q1',false)"><span class="opt-num">②</span>SNS 시대에 더 심해진 사회적 고립감</li>
+          <li onclick="check(this,'p94','q1',true)"><span class="opt-num">③</span>희소성 인식이 의사결정에 미치는 비합리적 영향</li>
+          <li onclick="check(this,'p94','q1',false)"><span class="opt-num">④</span>경제적 합리성을 회복하기 위한 방법</li>
+          <li onclick="check(this,'p94','q1',false)"><span class="opt-num">⑤</span>거짓말이 거래에 미치는 부정적 영향</li>
+        </ul>
+        <div class="feedback" id="p94-q1-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p94','q1')">↺ 다시 풀기</button>
+      </div>
+
+      <!-- Q2: 빈칸 -->
+      <div class="quiz-q">
+        <div class="quiz-num">Q2. 다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="quiz-type">빈칸 추론</span></div>
+        <div class="quiz-passage">
+          The prospect's decision is influenced by the psychological concept of scarcity, which makes them feel that the opportunity is <em>__________</em>, prompting them to take action and close the deal, even though this may not be entirely rational.
+        </div>
+        <ul class="opts" id="p94-q2">
+          <li onclick="check(this,'p94','q2',false)"><span class="opt-num">①</span>perfectly fair</li>
+          <li onclick="check(this,'p94','q2',true)"><span class="opt-num">②</span>limited or slipping away</li>
+          <li onclick="check(this,'p94','q2',false)"><span class="opt-num">③</span>economically valuable</li>
+          <li onclick="check(this,'p94','q2',false)"><span class="opt-num">④</span>completely guaranteed</li>
+          <li onclick="check(this,'p94','q2',false)"><span class="opt-num">⑤</span>socially acceptable</li>
+        </ul>
+        <div class="feedback" id="p94-q2-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p94','q2')">↺ 다시 풀기</button>
+      </div>
+
+      <!-- Q3: 어법 -->
+      <div class="quiz-q">
+        <div class="quiz-num">Q3. 다음 글의 밑줄 친 부분 중 어법상 틀린 것은?<span class="quiz-type">어법</span></div>
+        <div class="quiz-passage">
+          The Fear of Missing Out (FOMO) is a phenomenon ① <u>intensified</u> by perceived scarcity. Whenever my friend has an interested buyer ② <u>who</u> cannot decide, she calls. The doctor from London is, of course, ③ <u>fictitious</u>. The logical approach to ④ <u>decide</u> whether to buy the land should be based on genuine interest. Human behavior often ⑤ <u>deviates</u> from pure rationality.
+        </div>
+        <ul class="opts" id="p94-q3">
+          <li onclick="check(this,'p94','q3',false)"><span class="opt-num">①</span>intensified</li>
+          <li onclick="check(this,'p94','q3',false)"><span class="opt-num">②</span>who</li>
+          <li onclick="check(this,'p94','q3',false)"><span class="opt-num">③</span>fictitious</li>
+          <li onclick="check(this,'p94','q3',true)"><span class="opt-num">④</span>decide</li>
+          <li onclick="check(this,'p94','q3',false)"><span class="opt-num">⑤</span>deviates</li>
+        </ul>
+        <div class="feedback" id="p94-q3-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p94','q3')">↺ 다시 풀기</button>
+      </div>
+
+      <!-- Q4: 내용 일치 -->
+      <div class="quiz-q">
+        <div class="quiz-num">Q4. 윗글의 내용과 일치하지 <strong>않는</strong> 것은?<span class="quiz-type">내용 일치</span></div>
+        <ul class="opts" id="p94-q4">
+          <li onclick="check(this,'p94','q4',false)"><span class="opt-num">①</span>FOMO는 인식된 희소성에 의해 더욱 심화되는 심리 현상이다.</li>
+          <li onclick="check(this,'p94','q4',false)"><span class="opt-num">②</span>화자의 친구는 부동산 중개인이다.</li>
+          <li onclick="check(this,'p94','q4',true)"><span class="opt-num">③</span>"런던에서 온 의사"는 실제 인물이며, 자주 매수에 참여한다.</li>
+          <li onclick="check(this,'p94','q4',false)"><span class="opt-num">④</span>객관적 관점에서 보면 그 매수자의 결정은 비합리적이다.</li>
+          <li onclick="check(this,'p94','q4',false)"><span class="opt-num">⑤</span>인간의 행동은 종종 순수한 합리성에서 벗어난다.</li>
+        </ul>
+        <div class="feedback" id="p94-q4-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p94','q4')">↺ 다시 풀기</button>
+      </div>
+
+      <!-- 서술형 1 -->
+      <div class="essay-q">
+        <div class="quiz-num">서술형 1. 빈칸 요약<span class="quiz-type">빈칸 채우기</span></div>
+        <div class="essay-cond">
+          <strong>[조건]</strong> 본문에서 알맞은 단어 한 개씩을 찾아 빈칸 (A), (B)에 쓰시오.
+        </div>
+        <div class="quiz-passage">
+          When buyers feel that an opportunity is <strong>(A)</strong> __________ or about to slip away, they are more likely to close a deal, even though their decision may not be entirely <strong>(B)</strong> __________.
+        </div>
+        <textarea class="essay-area" placeholder="(A) ___________________&#10;(B) ___________________"></textarea>
+        <button type="button" class="ans-toggle" onclick="toggleAns('p94-e1')">모범답안 보기 ▼</button>
+        <div class="ans-box" id="p94-e1">
+          <strong>모범답안</strong><br>
+          (A) <strong>limited</strong><br>
+          (B) <strong>rational</strong><br>
+          <em style="color:#555">→ 본문 마지막 문장 "the opportunity is limited or slipping away" / "this may not be entirely rational"에서 직접 찾을 수 있음.</em>
+        </div>
+      </div>
+
+      <!-- 서술형 2 -->
+      <div class="essay-q">
+        <div class="quiz-num">서술형 2. 우리말 서술<span class="quiz-type">서술형</span></div>
+        <div class="essay-cond">
+          <strong>[조건]</strong> 본문에 등장하는 부동산 중개인의 "런던에서 온 의사" 이야기가 <em>왜</em> 효과적인지, 본문에서 사용된 심리학 개념을 포함하여 우리말로 2~3문장으로 서술하시오.
+        </div>
+        <textarea class="essay-area" placeholder="여기에 답안을 작성하세요. (2~3문장)"></textarea>
+        <button type="button" class="ans-toggle" onclick="toggleAns('p94-e2')">모범답안 보기 ▼</button>
+        <div class="ans-box" id="p94-e2">
+          <strong>모범답안</strong><br>
+          "런던에서 온 의사" 이야기는 매수자에게 그 땅을 사려는 다른 경쟁자가 있다는 느낌, 즉 <strong>희소성(scarcity)</strong>의 인식을 만들어낸다. 이렇게 인식된 희소성은 매수자에게 기회가 곧 사라질지 모른다는 압박감을 유발하여 <strong>FOMO(놓치는 것에 대한 두려움)</strong>를 자극한다. 그 결과 매수자는 객관적·논리적 판단을 따르기보다는 비합리적으로라도 즉시 거래를 성사시키게 된다.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== E-95 패널 ============== -->
+<section class="panel" id="p95">
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="pid-tag">E-95</span>
+      <h1>The Transit of Venus &amp; the AU</h1>
+    </div>
+    <div class="academy">에듀케레 영수학원 · 천일문 독해 Essential</div>
+  </div>
+  <div class="tabs">
+    <button type="button" class="tab-btn active" onclick="showTab('p95','t1')"><span class="tab-num">①</span>전문</button>
+    <button type="button" class="tab-btn" onclick="showTab('p95','t2')"><span class="tab-num">②</span>문장분석</button>
+    <button type="button" class="tab-btn" onclick="showTab('p95','t3')"><span class="tab-num">③</span>핵심단어·표현</button>
+    <button type="button" class="tab-btn" onclick="showTab('p95','t4')"><span class="tab-num">④</span>전문해석</button>
+    <button type="button" class="tab-btn" onclick="showTab('p95','t5')"><span class="tab-num">⑤</span>주제·요지</button>
+    <button type="button" class="tab-btn" onclick="showTab('p95','t6')"><span class="tab-num">⑥</span>배경지식</button>
+    <button type="button" class="tab-btn" onclick="showTab('p95','t7')"><span class="tab-num">⑦</span>변형문제</button>
+  </div>
+  <div class="content">
+
+    <!-- ① 전문 -->
+    <div class="tab-pane active" id="p95-t1">
+      <h2 class="section-h">① 전문 (Full Passage)</h2>
+      <div class="full-passage-meta">
+        <span>총 8문장</span><span>약 175 words</span><span>주제: 천문학·과학사</span>
+      </div>
+      <div class="full-passage">
+        What use is the transit of Venus, the unique astronomical event where Venus passes directly between the Earth and the Sun? During a transit, Venus can be seen from Earth as a small black dot moving across the face of the Sun. But historically the transit of Venus has been much more than a mere movement of heavenly bodies. In 1639, astronomer Jeremiah Horrocks unintentionally increased the size of the universe by using the transit. He measured the astronomical unit (AU)&mdash;the distance from the Earth to the Sun&mdash;by timing how long Venus took to move across the Sun from two different positions, and then using trigonometry to determine how far away the Sun must be. The answer he arrived at by that calculation, 56 million miles, was almost 10 times greater than scientists had thought. Robert Walsh, an astrophysicist at the University of Central Lancashire, said that with that one value, Horrocks expanded the solar system. More recent measurements, achieved by bouncing radio waves off the Sun and timing how long it takes them to return, have yielded greater accuracy than Horrocks&rsquo;s method: AU is now known to be around 93 million miles.
+      </div>
+    </div>
+
+    <!-- ② 문장분석 -->
+    <div class="tab-pane" id="p95-t2">
+      <h2 class="section-h">② 문장 분석 (Sentence Analysis)</h2>
+
+      <div class="sent-block">
+        <div class="sent-num">①</div>
+        <div class="en-box"><em>What use</em> is the transit of Venus, the unique astronomical event <u>where</u> Venus passes directly between the Earth and the Sun?</div>
+        <div class="literal">
+          <span class="literal-en">What use is / the transit of Venus, / the unique astronomical event / where Venus passes / directly between the Earth and the Sun?</span>
+          <span class="literal-ko">▶ 무슨 쓸모가 있는가 / 금성의 통과(transit)는, / 그 독특한 천문학적 사건은 / 그 사건에서 금성이 통과한다 / 지구와 태양 사이를 직접.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">의문 형용사 What + 명사</span> ▶ <span class="gr-ex">What use is the transit ...?</span> ★ <span class="gr-pt">"무슨 쓸모/효용이 있는가" – What use 구문, 의문문에서 도치(is)</span></li>
+          <li>◆ <span class="gr-name">동격 콤마 (the unique ... event)</span> ▶ <span class="gr-ex">the transit of Venus, the unique astronomical event</span> ★ <span class="gr-pt">앞 명사구를 다른 명사구로 부연 설명</span></li>
+          <li>◆ <span class="gr-name">관계부사 where (추상적 장소)</span> ▶ <span class="gr-ex">the event where Venus passes</span> ★ <span class="gr-pt">선행사 event(추상명사)를 받는 where; "그 사건에서"; in which와 동등</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">②</div>
+        <div class="en-box">During a transit, Venus <u>can be seen</u> from Earth as a small black dot <em>moving</em> across the face of the Sun.</div>
+        <div class="literal">
+          <span class="literal-en">During a transit, / Venus can be seen / from Earth / as a small black dot / moving across the face of the Sun.</span>
+          <span class="literal-ko">▶ 통과 동안에 / 금성은 보일 수 있다 / 지구에서 / 작은 검은 점으로 / 태양의 표면을 가로질러 움직이는.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">조동사 + 수동태 (can be seen)</span> ▶ <span class="gr-ex">Venus can be seen from Earth</span> ★ <span class="gr-pt">"보일 수 있다"; can + be + p.p.</span></li>
+          <li>◆ <span class="gr-name">현재분사 후치 수식 (moving)</span> ▶ <span class="gr-ex">a small black dot moving across</span> ★ <span class="gr-pt">a small black dot을 수식; "which is moving"의 축약</span></li>
+          <li>◆ <span class="gr-name">전치사 as (~로서)</span> ▶ <span class="gr-ex">seen as a small black dot</span> ★ <span class="gr-pt">"~로(서)" 자격·역할; "보는 모습"을 나타냄</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">③</div>
+        <div class="en-box">But historically the transit of Venus <u>has been</u> <em>much more than</em> a mere movement of heavenly bodies.</div>
+        <div class="literal">
+          <span class="literal-en">But historically / the transit of Venus / has been much more than / a mere movement of heavenly bodies.</span>
+          <span class="literal-ko">▶ 그러나 역사적으로 / 금성의 통과는 / 훨씬 그 이상이었다 / 단순한 천체의 움직임 그 이상.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">현재완료 (have/has + p.p.)</span> ▶ <span class="gr-ex">has been much more than ...</span> ★ <span class="gr-pt">과거부터 현재까지 이어지는 의의·상태; "~이어 왔다"</span></li>
+          <li>◆ <span class="gr-name">비교 강조 부사 much more than</span> ▶ <span class="gr-ex">much more than a mere movement</span> ★ <span class="gr-pt">"훨씬 ~ 이상이다"; far/even/still도 비교급 강조</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">④</div>
+        <div class="en-box">In 1639, astronomer Jeremiah Horrocks <u>unintentionally</u> increased the size of the universe <em>by using</em> the transit.</div>
+        <div class="literal">
+          <span class="literal-en">In 1639, / astronomer Jeremiah Horrocks / unintentionally increased the size of the universe / by using the transit.</span>
+          <span class="literal-ko">▶ 1639년에, / 천문학자 제레미아 호록스는 / 의도치 않게 우주의 크기를 증가시켰다 / 그 통과 현상을 이용함으로써.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">by + 동명사 (~함으로써)</span> ▶ <span class="gr-ex">by using the transit</span> ★ <span class="gr-pt">"수단·방법"을 나타내는 by + V-ing</span></li>
+          <li>◆ <span class="gr-name">동격 명사구</span> ▶ <span class="gr-ex">astronomer Jeremiah Horrocks</span> ★ <span class="gr-pt">직책+이름의 동격 구조 (관사 없음)</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑤</div>
+        <div class="en-box">He measured the astronomical unit (AU)&mdash;the distance from the Earth to the Sun&mdash;<em>by timing</em> <u>how long</u> Venus took to move across the Sun from two different positions, and then <em>using</em> trigonometry to determine <u>how far away</u> the Sun must be.</div>
+        <div class="literal">
+          <span class="literal-en">He measured the astronomical unit (AU) / — the distance from the Earth to the Sun — / by timing / how long Venus took to move across the Sun / from two different positions, / and then using trigonometry / to determine / how far away the Sun must be.</span>
+          <span class="literal-ko">▶ 그는 천문단위(AU)를 측정했다 / — 지구에서 태양까지의 거리인 — / 시간을 잼으로써 / 얼마나 오래 금성이 태양을 가로지르는 데 걸렸는지 / 두 개의 다른 위치에서, / 그러고 나서 삼각법을 사용하여 / 결정했다 / 태양이 얼마나 멀리 있어야 하는지를.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">대시 삽입 동격</span> ▶ <span class="gr-ex">the AU — the distance ... — by timing</span> ★ <span class="gr-pt">대시(—)로 동격 삽입; AU = the distance from the Earth to the Sun</span></li>
+          <li>◆ <span class="gr-name">간접의문문 (how long)</span> ▶ <span class="gr-ex">how long Venus took to move</span> ★ <span class="gr-pt">timing의 목적어; 의문사 + 평서문 어순</span></li>
+          <li>◆ <span class="gr-name">병렬 구조 by V-ing ... and using</span> ▶ <span class="gr-ex">by timing ... and (then) using trigonometry</span> ★ <span class="gr-pt">두 개의 V-ing가 by에 병렬로 연결</span></li>
+          <li>◆ <span class="gr-name">조동사 must (논리적 추측)</span> ▶ <span class="gr-ex">how far away the Sun must be</span> ★ <span class="gr-pt">"~임에 틀림없다"; 의무가 아닌 강한 추측</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑥</div>
+        <div class="en-box">The answer <u>he arrived at</u> by that calculation, 56 million miles, was <em>almost 10 times greater than</em> scientists had thought.</div>
+        <div class="literal">
+          <span class="literal-en">The answer / he arrived at by that calculation, / 56 million miles, / was almost 10 times greater / than scientists had thought.</span>
+          <span class="literal-ko">▶ 그 답은 / 그가 그 계산으로 도달한, / 56백만 마일이었는데, / 거의 10배 더 컸다 / 과학자들이 생각했던 것보다.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">목적격 관계대명사 생략 + 전치사 잔류</span> ▶ <span class="gr-ex">The answer (that) he arrived at</span> ★ <span class="gr-pt">선행사 The answer 뒤 관계대명사 that(which) 생략; arrived at의 at 잔류</span></li>
+          <li>◆ <span class="gr-name">배수 + 비교급 (10 times greater than)</span> ▶ <span class="gr-ex">10 times greater than scientists had thought</span> ★ <span class="gr-pt">"~보다 10배 더 큰"; 배수사 + 비교급 + than</span></li>
+          <li>◆ <span class="gr-name">과거완료 had thought</span> ▶ <span class="gr-ex">than scientists had thought</span> ★ <span class="gr-pt">주절 시제(was)보다 더 이전; "그 이전에 생각해 왔던 것보다"</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑦</div>
+        <div class="en-box">Robert Walsh, an astrophysicist at the University of Central Lancashire, said <em>that</em> with that one value, Horrocks expanded the solar system.</div>
+        <div class="literal">
+          <span class="literal-en">Robert Walsh, / an astrophysicist at the University of Central Lancashire, / said that / with that one value, / Horrocks expanded the solar system.</span>
+          <span class="literal-ko">▶ Robert Walsh는, / 센트럴 랭커셔 대학교의 천체물리학자인, / 말했다 / 그 하나의 값으로, / Horrocks가 태양계를 확장시켰다고.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">동격 콤마 (an astrophysicist ...)</span> ▶ <span class="gr-ex">Robert Walsh, an astrophysicist at ...</span> ★ <span class="gr-pt">사람 이름 + 직책의 동격 부연 설명</span></li>
+          <li>◆ <span class="gr-name">명사절 접속사 that</span> ▶ <span class="gr-ex">said that ... Horrocks expanded</span> ★ <span class="gr-pt">said의 목적어로 쓰인 명사절</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑧</div>
+        <div class="en-box">More recent measurements, <u>achieved</u> by bouncing radio waves off the Sun and <em>timing</em> how long it takes them to return, <u>have yielded</u> greater accuracy than Horrocks&rsquo;s method: AU is now known to be around 93 million miles.</div>
+        <div class="literal">
+          <span class="literal-en">More recent measurements, / achieved by bouncing radio waves off the Sun / and timing how long it takes them to return, / have yielded greater accuracy / than Horrocks's method: / AU is now known / to be around 93 million miles.</span>
+          <span class="literal-ko">▶ 보다 최근의 측정들은, / 태양에 전파를 튀겨내고 (그것을) 함으로써 이루어진 / 그리고 그것들이 돌아오는 데 얼마나 걸리는지를 측정함으로써, / 더 큰 정확도를 가져왔다 / 호록스의 방법보다: / AU는 이제 알려져 있다 / 약 9300만 마일이라고.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">과거분사 후치 수식 (achieved)</span> ▶ <span class="gr-ex">measurements, achieved by ...</span> ★ <span class="gr-pt">measurements를 수식; "(which were) achieved"의 축약</span></li>
+          <li>◆ <span class="gr-name">전치사 + 동명사 병렬 (by ... and ...)</span> ▶ <span class="gr-ex">by bouncing ... and timing ...</span> ★ <span class="gr-pt">두 개의 V-ing가 전치사 by에 병렬로 연결</span></li>
+          <li>◆ <span class="gr-name">현재완료 (have yielded)</span> ▶ <span class="gr-ex">have yielded greater accuracy</span> ★ <span class="gr-pt">최근부터 지금까지 누적된 결과</span></li>
+          <li>◆ <span class="gr-name">be known to V (~로 알려져 있다)</span> ▶ <span class="gr-ex">AU is now known to be ...</span> ★ <span class="gr-pt">"~인 것으로 알려져 있다"; 수동 + to부정사 구조</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ③ 핵심단어 -->
+    <div class="tab-pane" id="p95-t3">
+      <h2 class="section-h">③ 핵심 단어 및 표현</h2>
+      <div class="card">
+        <div class="vocab-item"><span class="vocab-word">transit</span><span class="vocab-pos">n.</span><span class="vocab-mean">통과(현상); 운송</span><span class="vocab-derive">transition (n. 전이), transitive (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">astronomical</span><span class="vocab-pos">adj.</span><span class="vocab-mean">천문학의; (수치가) 천문학적인</span><span class="vocab-derive">astronomy (n.), astronomer (n. 천문학자)</span></div>
+        <div class="vocab-item"><span class="vocab-word">heavenly bodies</span><span class="vocab-pos">phr.</span><span class="vocab-mean">천체</span><span class="vocab-derive">heavenly (adj. 천상의)</span></div>
+        <div class="vocab-item"><span class="vocab-word">unintentionally</span><span class="vocab-pos">adv.</span><span class="vocab-mean">의도치 않게, 무심코</span><span class="vocab-derive">intend (v.), intention (n.); 반의어: intentionally</span></div>
+        <div class="vocab-item"><span class="vocab-word">measure</span><span class="vocab-pos">v./n.</span><span class="vocab-mean">측정하다; 측정 단위</span><span class="vocab-derive">measurement (n.), measurable (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">astronomical unit (AU)</span><span class="vocab-pos">n.</span><span class="vocab-mean">천문단위 (지구-태양 평균 거리)</span><span class="vocab-derive">—</span></div>
+        <div class="vocab-item"><span class="vocab-word">timing</span><span class="vocab-pos">n./v-ing</span><span class="vocab-mean">시간 측정; ~의 시간을 재기</span><span class="vocab-derive">time (v. 시간을 재다)</span></div>
+        <div class="vocab-item"><span class="vocab-word">trigonometry</span><span class="vocab-pos">n.</span><span class="vocab-mean">삼각법, 삼각측량학</span><span class="vocab-derive">trigonometric (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">determine</span><span class="vocab-pos">v.</span><span class="vocab-mean">결정하다; 알아내다</span><span class="vocab-derive">determination (n.), determined (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">arrive at</span><span class="vocab-pos">phr.</span><span class="vocab-mean">(결론·답에) 도달하다</span><span class="vocab-derive">arrival (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">calculation</span><span class="vocab-pos">n.</span><span class="vocab-mean">계산</span><span class="vocab-derive">calculate (v.), calculator (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">astrophysicist</span><span class="vocab-pos">n.</span><span class="vocab-mean">천체물리학자</span><span class="vocab-derive">astrophysics (n. 천체물리학)</span></div>
+        <div class="vocab-item"><span class="vocab-word">expand</span><span class="vocab-pos">v.</span><span class="vocab-mean">확장하다, 팽창시키다</span><span class="vocab-derive">expansion (n.), expansive (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">solar system</span><span class="vocab-pos">n.</span><span class="vocab-mean">태양계</span><span class="vocab-derive">solar (adj. 태양의)</span></div>
+        <div class="vocab-item"><span class="vocab-word">bounce off</span><span class="vocab-pos">phr.</span><span class="vocab-mean">~에서 튕겨 나오다</span><span class="vocab-derive">bounce (v./n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">yield</span><span class="vocab-pos">v.</span><span class="vocab-mean">(결과를) 산출하다, 가져오다; 양보하다</span><span class="vocab-derive">yielding (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">accuracy</span><span class="vocab-pos">n.</span><span class="vocab-mean">정확도, 정밀도</span><span class="vocab-derive">accurate (adj.), accurately (adv.)</span></div>
+      </div>
+    </div>
+
+    <!-- ④ 전문해석 -->
+    <div class="tab-pane" id="p95-t4">
+      <h2 class="section-h">④ 전문 해석 (Translation)</h2>
+      <div class="card">
+        <p class="translation">금성이 지구와 태양 사이를 직접 지나가는 독특한 천문 현상인 금성 통과(transit of Venus)는 무슨 쓸모가 있을까? 통과가 일어나는 동안, 금성은 지구에서 태양 표면을 가로질러 움직이는 작은 검은 점으로 관측될 수 있다. 그러나 역사적으로 금성 통과는 단순한 천체의 움직임 그 이상이었다. 1639년, 천문학자 제레미아 호록스는 그 통과 현상을 이용해 의도치 않게 우주의 크기를 키워 놓았다. 그는 두 개의 다른 위치에서 금성이 태양 면을 가로지르는 데 걸린 시간을 측정한 다음, 삼각법을 이용해 태양이 얼마나 멀리 있어야 하는지를 계산함으로써 천문단위(AU), 즉 지구에서 태양까지의 거리를 측정해냈다. 그가 그 계산으로 얻은 답은 5,600만 마일이었는데, 이는 그때까지 과학자들이 생각해 왔던 값보다 거의 10배나 더 큰 값이었다. 센트럴 랭커셔 대학의 천체물리학자 로버트 월시는 그 하나의 값을 통해 호록스가 태양계를 확장시켰다고 말했다. 이후의 더 최근 측정들은 태양에 전파를 쏘아 그것이 되돌아오는 데 걸리는 시간을 재는 방식으로 이루어졌으며, 호록스의 방법보다 더 큰 정확도를 가져왔다. 그리하여 AU는 현재 약 9,300만 마일로 알려져 있다.</p>
+      </div>
+    </div>
+
+    <!-- ⑤ 주제·요지 -->
+    <div class="tab-pane" id="p95-t5">
+      <h2 class="section-h">⑤ 주제·요지·구조</h2>
+      <div class="card">
+        <div class="topic-block">
+          <span class="topic-label">TOPIC 주제</span>
+          <p class="topic-text">금성 통과 현상이 천문단위(AU) 측정과 우주 크기 인식 확장에 끼친 역사적 기여</p>
+        </div>
+        <div class="topic-block">
+          <span class="topic-label">MAIN IDEA 요지</span>
+          <p class="topic-text">17세기 천문학자 호록스는 금성 통과 현상과 삼각법을 이용해 지구-태양 거리를 측정하고, 그 결과 인류가 인식하는 우주의 크기를 약 10배 확장시켰다. 오늘날에는 전파 측정으로 더 정확한 값(약 9,300만 마일)이 알려져 있다.</p>
+        </div>
+        <div class="topic-block">
+          <span class="topic-label">STRUCTURE 구조</span>
+          <div class="structure-step"><span class="step-tag">[도입]</span> 금성 통과 현상의 정의 + "단순한 천체 움직임 이상"임을 시사</div>
+          <div class="structure-step"><span class="step-tag">[전개1]</span> 1639년 호록스의 시도 — 두 위치 시간 측정 + 삼각법</div>
+          <div class="structure-step"><span class="step-tag">[전개2]</span> 측정 결과 5,600만 마일, 기존 값의 10배 → 태양계 확장</div>
+          <div class="structure-step"><span class="step-tag">[결론]</span> 현대의 전파 측정법: 더 정확한 약 9,300만 마일</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑥ 배경지식 -->
+    <div class="tab-pane" id="p95-t6">
+      <h2 class="section-h">⑥ 배경지식 (Background Knowledge)</h2>
+      <div class="bg-knowledge">
+        <h4>🌌 금성 통과(Transit of Venus)란?</h4>
+        <p>금성이 지구와 태양 사이를 정확히 지나가서, 지구에서 보면 금성이 태양 표면 위로 작은 검은 점처럼 움직이는 현상이다. 매우 드물게 일어나는 사건으로, 약 100년에 두 번(8년 간격으로 짝지어) 발생한다. 가장 최근 통과는 2004년과 2012년이었으며, 다음 통과는 <strong>2117년</strong>에야 일어난다.</p>
+
+        <h4>👨‍🔬 제레미아 호록스(Jeremiah Horrocks, 1618~1641)</h4>
+        <p>영국 잉글랜드의 젊은 천문학자. 케플러의 행성 운동 법칙을 보완하고, 1639년 11월 24일(율리우스력) 금성 통과를 <strong>인류 역사상 최초로 정확히 예측하고 관측한 인물</strong>이다. 본문의 사건이 바로 이 관측이다. 안타깝게도 호록스는 22세에 요절했으나, 그의 관측 기록은 천문학 역사상 매우 중요한 데이터로 남아 있다.</p>
+
+        <h4>📐 삼각법(Trigonometry)을 이용한 거리 측정</h4>
+        <p>지구상의 두 다른 지점에서 금성이 태양 표면을 통과하는 모습을 관찰하면, 두 관측 위치 사이의 거리(기선)와 두 관측에서 본 금성 위치의 차이(시차, parallax)를 알 수 있다. 이를 삼각법에 적용하면 금성까지의 거리, 그리고 케플러 법칙을 통해 지구-태양 거리(AU)도 계산해낼 수 있다. 이 방법은 18세기 핼리(Halley)와 쿡(Cook) 선장의 탐험으로 더욱 정교해졌다.</p>
+
+        <h4>📏 천문단위(AU)의 정확한 값</h4>
+        <p>호록스의 추정값: 약 5,600만 마일 (실제의 약 60%)<br>
+        현대 정확한 값: <strong>약 9,300만 마일 ≈ 1억 4,960만 km</strong> (1 AU = 149,597,870.7 km로 2012년 국제천문연맹이 공식 정의)<br>
+        측정 방법은 본문에서처럼 전파(레이더)를 행성에 쏘아 반사되어 돌아오는 시간을 측정하는 방식이다. 빛의 속도(약 30만 km/s)를 곱하면 거리가 나온다.</p>
+      </div>
+    </div>
+
+    <!-- ⑦ 변형문제 -->
+    <div class="tab-pane" id="p95-t7">
+      <h2 class="section-h">⑦ 변형문제 (Practice Quiz)</h2>
+
+      <div class="quiz-q">
+        <div class="quiz-num">Q1. 다음 글의 주제로 가장 적절한 것은?<span class="quiz-type">주제 추론</span></div>
+        <ul class="opts" id="p95-q1">
+          <li onclick="check(this,'p95','q1',false)"><span class="opt-num">①</span>금성과 지구의 공전 주기 차이</li>
+          <li onclick="check(this,'p95','q1',false)"><span class="opt-num">②</span>고대 천문학과 현대 천문학의 차이점</li>
+          <li onclick="check(this,'p95','q1',true)"><span class="opt-num">③</span>금성 통과 관측을 통한 태양계 크기 측정의 역사</li>
+          <li onclick="check(this,'p95','q1',false)"><span class="opt-num">④</span>전파 천문학의 발전 과정</li>
+          <li onclick="check(this,'p95','q1',false)"><span class="opt-num">⑤</span>제레미아 호록스의 생애와 업적</li>
+        </ul>
+        <div class="feedback" id="p95-q1-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p95','q1')">↺ 다시 풀기</button>
+      </div>
+
+      <div class="quiz-q">
+        <div class="quiz-num">Q2. 다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="quiz-type">빈칸 추론</span></div>
+        <div class="quiz-passage">
+          The answer he arrived at by that calculation, 56 million miles, was almost <em>__________</em> than scientists had thought.
+        </div>
+        <ul class="opts" id="p95-q2">
+          <li onclick="check(this,'p95','q2',false)"><span class="opt-num">①</span>twice smaller</li>
+          <li onclick="check(this,'p95','q2',false)"><span class="opt-num">②</span>5 times smaller</li>
+          <li onclick="check(this,'p95','q2',true)"><span class="opt-num">③</span>10 times greater</li>
+          <li onclick="check(this,'p95','q2',false)"><span class="opt-num">④</span>100 times greater</li>
+          <li onclick="check(this,'p95','q2',false)"><span class="opt-num">⑤</span>identical to what</li>
+        </ul>
+        <div class="feedback" id="p95-q2-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p95','q2')">↺ 다시 풀기</button>
+      </div>
+
+      <div class="quiz-q">
+        <div class="quiz-num">Q3. 다음 글의 밑줄 친 부분 중 어법상 틀린 것은?<span class="quiz-type">어법</span></div>
+        <div class="quiz-passage">
+          The transit of Venus is the unique astronomical event ① <u>where</u> Venus passes between the Earth and the Sun. Venus ② <u>can be seen</u> from Earth as a small black dot. Horrocks measured the AU by timing ③ <u>how long</u> Venus took to move across the Sun. The answer he arrived at, 56 million miles, was almost 10 times ④ <u>great</u> than scientists had thought. AU is now known ⑤ <u>to be</u> around 93 million miles.
+        </div>
+        <ul class="opts" id="p95-q3">
+          <li onclick="check(this,'p95','q3',false)"><span class="opt-num">①</span>where</li>
+          <li onclick="check(this,'p95','q3',false)"><span class="opt-num">②</span>can be seen</li>
+          <li onclick="check(this,'p95','q3',false)"><span class="opt-num">③</span>how long</li>
+          <li onclick="check(this,'p95','q3',true)"><span class="opt-num">④</span>great</li>
+          <li onclick="check(this,'p95','q3',false)"><span class="opt-num">⑤</span>to be</li>
+        </ul>
+        <div class="feedback" id="p95-q3-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p95','q3')">↺ 다시 풀기</button>
+      </div>
+
+      <div class="quiz-q">
+        <div class="quiz-num">Q4. 윗글의 내용과 일치하지 <strong>않는</strong> 것은?<span class="quiz-type">내용 일치</span></div>
+        <ul class="opts" id="p95-q4">
+          <li onclick="check(this,'p95','q4',false)"><span class="opt-num">①</span>금성 통과 시 금성은 지구에서 태양 위의 작은 검은 점처럼 보인다.</li>
+          <li onclick="check(this,'p95','q4',false)"><span class="opt-num">②</span>호록스는 1639년 두 다른 위치에서의 시간 측정과 삼각법을 사용했다.</li>
+          <li onclick="check(this,'p95','q4',true)"><span class="opt-num">③</span>호록스가 측정한 5,600만 마일은 당시 과학자들이 생각하던 값과 비슷했다.</li>
+          <li onclick="check(this,'p95','q4',false)"><span class="opt-num">④</span>최근의 측정은 태양에 전파를 쏘는 방식으로 이루어진다.</li>
+          <li onclick="check(this,'p95','q4',false)"><span class="opt-num">⑤</span>현재 알려진 AU 값은 약 9,300만 마일이다.</li>
+        </ul>
+        <div class="feedback" id="p95-q4-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p95','q4')">↺ 다시 풀기</button>
+      </div>
+
+      <div class="essay-q">
+        <div class="quiz-num">서술형 1. 빈칸 요약<span class="quiz-type">빈칸 채우기</span></div>
+        <div class="essay-cond">
+          <strong>[조건]</strong> 본문에서 알맞은 단어 한 개씩을 찾아 빈칸 (A), (B)에 쓰시오.
+        </div>
+        <div class="quiz-passage">
+          In 1639, Horrocks unintentionally <strong>(A)</strong> __________ the size of the universe by measuring the AU using the transit. His value was almost ten times greater than what scientists had thought, but more recent <strong>(B)</strong> __________, achieved by bouncing radio waves off the Sun, give an even more accurate result.
+        </div>
+        <textarea class="essay-area" placeholder="(A) ___________________&#10;(B) ___________________"></textarea>
+        <button type="button" class="ans-toggle" onclick="toggleAns('p95-e1')">모범답안 보기 ▼</button>
+        <div class="ans-box" id="p95-e1">
+          <strong>모범답안</strong><br>
+          (A) <strong>increased</strong> (또는 expanded)<br>
+          (B) <strong>measurements</strong><br>
+          <em style="color:#555">→ ④문장 "increased the size of the universe", ⑦문장 "Horrocks expanded the solar system", ⑧문장 "More recent measurements"에서 도출.</em>
+        </div>
+      </div>
+
+      <div class="essay-q">
+        <div class="quiz-num">서술형 2. 우리말 서술<span class="quiz-type">서술형</span></div>
+        <div class="essay-cond">
+          <strong>[조건]</strong> 호록스가 천문단위(AU)를 측정한 방법을 본문에 근거하여 두 단계로 나누어 우리말로 서술하시오.
+        </div>
+        <textarea class="essay-area" placeholder="1단계: &#10;2단계: "></textarea>
+        <button type="button" class="ans-toggle" onclick="toggleAns('p95-e2')">모범답안 보기 ▼</button>
+        <div class="ans-box" id="p95-e2">
+          <strong>모범답안</strong><br>
+          <strong>1단계</strong>: 두 개의 서로 다른 (지구상의) 위치에서 금성이 태양 면을 가로질러 움직이는 데 걸린 시간을 각각 측정하였다.<br>
+          <strong>2단계</strong>: 그렇게 얻은 시간 차이에 삼각법(trigonometry)을 적용하여, 태양이 (지구로부터) 얼마나 멀리 떨어져 있어야 하는지를 계산함으로써 천문단위(AU)를 구하였다.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== E-96 패널 ============== -->
+<section class="panel" id="p96">
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="pid-tag">E-96</span>
+      <h1>Order as Survival Advantage</h1>
+    </div>
+    <div class="academy">에듀케레 영수학원 · 천일문 독해 Essential</div>
+  </div>
+  <div class="tabs">
+    <button type="button" class="tab-btn active" onclick="showTab('p96','t1')"><span class="tab-num">①</span>전문</button>
+    <button type="button" class="tab-btn" onclick="showTab('p96','t2')"><span class="tab-num">②</span>문장분석</button>
+    <button type="button" class="tab-btn" onclick="showTab('p96','t3')"><span class="tab-num">③</span>핵심단어·표현</button>
+    <button type="button" class="tab-btn" onclick="showTab('p96','t4')"><span class="tab-num">④</span>전문해석</button>
+    <button type="button" class="tab-btn" onclick="showTab('p96','t5')"><span class="tab-num">⑤</span>주제·요지</button>
+    <button type="button" class="tab-btn" onclick="showTab('p96','t6')"><span class="tab-num">⑥</span>배경지식</button>
+    <button type="button" class="tab-btn" onclick="showTab('p96','t7')"><span class="tab-num">⑦</span>변형문제</button>
+  </div>
+  <div class="content">
+
+    <!-- ① 전문 -->
+    <div class="tab-pane active" id="p96-t1">
+      <h2 class="section-h">① 전문 (Full Passage)</h2>
+      <div class="full-passage-meta">
+        <span>총 7문장</span><span>약 175 words</span><span>주제: 인류학·진화론</span>
+      </div>
+      <div class="full-passage">
+        There was once a time when the world was full of mess and disorder. Then mankind came along. Prehistoric men wouldn&rsquo;t at first have been significantly less messy than most other animals. Then, gradually, they developed a skill for categorizing mushrooms into poisonous and nonpoisonous varieties, for keeping hunting grounds free of human signs that would alert prey, and for scheduling shifts for guard duty. Archaeological sites dating as far back as 1.5 million years suggest that early humans established storage areas for tools, and that by 20,000 BC some hunter-gatherers had separate areas for eating, cooking, tossing garbage, and even for leisure activities such as carving stones. Anthropologists have argued that the Neanderthals, a species of man that branched off from our own ancestor Homo sapiens half a million years ago and thrived in Europe for a hundred thousand years, died off because they seemed to be less organized than our own primitive ancestors, judging by the excavated remains of the messier Neanderthal sites. Clearly, a preference for certain types of order must have resulted in advantages in primitive men&rsquo;s fight for survival.
+      </div>
+    </div>
+
+    <!-- ② 문장분석 -->
+    <div class="tab-pane" id="p96-t2">
+      <h2 class="section-h">② 문장 분석 (Sentence Analysis)</h2>
+
+      <div class="sent-block">
+        <div class="sent-num">①</div>
+        <div class="en-box">There was once a time <em>when</em> the world was full of mess and disorder.</div>
+        <div class="literal">
+          <span class="literal-en">There was once a time / when the world was full of mess and disorder.</span>
+          <span class="literal-ko">▶ 한때 시간이 있었다 / 세상이 혼란과 무질서로 가득 차 있던.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">There + be 구문</span> ▶ <span class="gr-ex">There was once a time</span> ★ <span class="gr-pt">"~이 있었다" 존재 표현; 진주어는 a time</span></li>
+          <li>◆ <span class="gr-name">관계부사 when (시간)</span> ▶ <span class="gr-ex">a time when the world was ...</span> ★ <span class="gr-pt">선행사 a time을 받는 관계부사; in which와 같음</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">②</div>
+        <div class="en-box">Then mankind <u>came along</u>.</div>
+        <div class="literal">
+          <span class="literal-en">Then / mankind came along.</span>
+          <span class="literal-ko">▶ 그리고 / 인류가 등장했다.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">구동사 come along</span> ▶ <span class="gr-ex">mankind came along</span> ★ <span class="gr-pt">"등장하다, 나타나다"; 짧지만 도입의 핵심 문장</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">③</div>
+        <div class="en-box">Prehistoric men <u>wouldn&rsquo;t</u> at first <em>have been</em> significantly less messy than most other animals.</div>
+        <div class="literal">
+          <span class="literal-en">Prehistoric men / wouldn't at first have been / significantly less messy / than most other animals.</span>
+          <span class="literal-ko">▶ 선사시대 사람들은 / 처음에는 ~였지 않았을 것이다 / 상당히 덜 지저분한 / 대부분의 다른 동물들보다.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">would + have p.p. (과거 추측)</span> ▶ <span class="gr-ex">wouldn't at first have been ... messy</span> ★ <span class="gr-pt">"~였을 것이다(과거에 대한 추측)"; 사실의 단정이 아닌 추정</span></li>
+          <li>◆ <span class="gr-name">less + 형용사 + than (열등비교)</span> ▶ <span class="gr-ex">less messy than most other animals</span> ★ <span class="gr-pt">"~보다 덜 ~한"; "wouldn't ... less"의 부정 + 열등비교 = "거의 비슷하게 messy했을 것"</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">④</div>
+        <div class="en-box">Then, gradually, they developed a skill <em>for categorizing</em> mushrooms <u>into</u> poisonous and nonpoisonous varieties, <em>for keeping</em> hunting grounds free of human signs <em>that</em> would alert prey, and <em>for scheduling</em> shifts for guard duty.</div>
+        <div class="literal">
+          <span class="literal-en">Then, gradually, / they developed a skill / for categorizing mushrooms into poisonous and nonpoisonous varieties, / for keeping hunting grounds free of human signs that would alert prey, / and for scheduling shifts for guard duty.</span>
+          <span class="literal-ko">▶ 그 후, 점차, / 그들은 한 가지 기술을 발전시켰다 / 버섯을 독성과 비독성 종류로 분류하는, / 사냥터를 사냥감에게 경고를 줄 인간의 흔적이 없도록 유지하는, / 그리고 보초 임무 교대를 짜는.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">a skill for V-ing 병렬 (3개)</span> ▶ <span class="gr-ex">for categorizing ... for keeping ... and for scheduling ...</span> ★ <span class="gr-pt">"a skill" 하나에 세 개의 for + V-ing가 병렬; 세 가지 능력 묶기</span></li>
+          <li>◆ <span class="gr-name">categorize A into B</span> ▶ <span class="gr-ex">categorizing mushrooms into ... varieties</span> ★ <span class="gr-pt">"A를 B로 분류하다"; 전치사 into 필수</span></li>
+          <li>◆ <span class="gr-name">keep + 목적어 + 형용사 (free of)</span> ▶ <span class="gr-ex">keeping hunting grounds free of ...</span> ★ <span class="gr-pt">"~을 ~없이 유지하다"; 5형식 keep + 목 + 보(형용사)</span></li>
+          <li>◆ <span class="gr-name">주격 관계대명사 that</span> ▶ <span class="gr-ex">human signs that would alert prey</span> ★ <span class="gr-pt">선행사 signs; would는 "~하게 될" 가능성</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑤</div>
+        <div class="en-box">Archaeological sites <u>dating</u> as far back as 1.5 million years <em>suggest that</em> early humans established storage areas for tools, <em>and that</em> by 20,000 BC some hunter-gatherers had separate areas for eating, cooking, tossing garbage, and even for leisure activities <em>such as</em> carving stones.</div>
+        <div class="literal">
+          <span class="literal-en">Archaeological sites / dating as far back as 1.5 million years / suggest that early humans established storage areas for tools, / and that by 20,000 BC / some hunter-gatherers had separate areas / for eating, cooking, tossing garbage, / and even for leisure activities such as carving stones.</span>
+          <span class="literal-ko">▶ 고고학적 유적지들은 / 1500만 년 전까지 거슬러 올라가는 / 시사한다 / 초기 인류가 도구를 위한 보관 구역을 만들었음을, / 그리고 기원전 2만 년에는 / 일부 수렵채집인들이 별도의 구역을 가지고 있었음을 / 먹기, 요리, 쓰레기 버리기, / 심지어 돌을 깎는 것과 같은 여가 활동을 위한.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">현재분사 후치 수식 (dating)</span> ▶ <span class="gr-ex">sites dating as far back as ...</span> ★ <span class="gr-pt">sites를 수식; "(which) date back to"의 축약 – date back to: 거슬러 올라가다</span></li>
+          <li>◆ <span class="gr-name">강조 표현 as far back as</span> ▶ <span class="gr-ex">as far back as 1.5 million years</span> ★ <span class="gr-pt">"~까지나 거슬러 올라가는"; 시간의 광대함 강조 (※ 본문 표기는 1.5 million으로 150만이지만 직역상 "150만 년"이 표준)</span></li>
+          <li>◆ <span class="gr-name">병렬 명사절 suggest that ... and that ...</span> ▶ <span class="gr-ex">suggest that ... and that ...</span> ★ <span class="gr-pt">suggest 동사의 목적어로 두 개의 that절 병렬 — 두 번째 that 생략 불가</span></li>
+          <li>◆ <span class="gr-name">동명사 병렬 + such as</span> ▶ <span class="gr-ex">eating, cooking, tossing garbage ... such as carving</span> ★ <span class="gr-pt">전치사 for의 목적어로 동명사 4개 병렬; such as 뒤에도 동명사 carving</span></li>
+        </ul>
+        <p style="font-size:11px;color:#888;margin-top:6px">※ 본문의 "1.5 million years"는 약 150만 년 전을 의미합니다.</p>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑥</div>
+        <div class="en-box">Anthropologists have argued <em>that</em> the Neanderthals, <u>a species of man</u> <em>that</em> branched off from our own ancestor Homo sapiens half a million years ago and thrived in Europe for a hundred thousand years, died off <em>because</em> they seemed to be less organized than our own primitive ancestors, <u>judging by</u> the excavated remains of the messier Neanderthal sites.</div>
+        <div class="literal">
+          <span class="literal-en">Anthropologists have argued that / the Neanderthals, / a species of man that branched off from our own ancestor Homo sapiens / half a million years ago / and thrived in Europe for a hundred thousand years, / died off / because they seemed to be less organized than our own primitive ancestors, / judging by the excavated remains of the messier Neanderthal sites.</span>
+          <span class="literal-ko">▶ 인류학자들은 주장해왔다 / 네안데르탈인이, / 우리 조상 호모 사피엔스로부터 분기되어 나온 인류의 한 종으로 / 50만 년 전에 / 그리고 유럽에서 십만 년 동안 번성했던, / 멸종했다고 / 그들이 우리의 원시적 조상보다 덜 조직적이었던 것으로 보였기 때문에, / 더 어수선한 네안데르탈 유적지의 발굴된 유물로 판단해 볼 때.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">동격 콤마 + 관계대명사 절 (긴 수식)</span> ▶ <span class="gr-ex">Neanderthals, a species of man that ... and thrived ..., died off</span> ★ <span class="gr-pt">주어 Neanderthals와 동사 died off 사이에 긴 동격 + 관계대명사절 삽입; 주-동 구조 파악이 핵심</span></li>
+          <li>◆ <span class="gr-name">관계대명사절 내 동사 병렬</span> ▶ <span class="gr-ex">that branched off ... and thrived in Europe ...</span> ★ <span class="gr-pt">that의 동사 두 개(branched / thrived)가 and로 병렬</span></li>
+          <li>◆ <span class="gr-name">seem + to부정사</span> ▶ <span class="gr-ex">seemed to be less organized</span> ★ <span class="gr-pt">"~인 것 같다"; 주어 they가 to be의 의미상 주어</span></li>
+          <li>◆ <span class="gr-name">독립분사구문 judging by</span> ▶ <span class="gr-ex">judging by the excavated remains</span> ★ <span class="gr-pt">관용적 분사구문; "~로 판단해 볼 때" – 의미상 주어가 일반인</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑦</div>
+        <div class="en-box">Clearly, a preference for certain types of order <em>must have resulted in</em> advantages in primitive men&rsquo;s fight for survival.</div>
+        <div class="literal">
+          <span class="literal-en">Clearly, / a preference for certain types of order / must have resulted in advantages / in primitive men's fight for survival.</span>
+          <span class="literal-ko">▶ 분명히, / 특정 종류의 질서에 대한 선호가 / 이점을 가져왔음에 틀림없다 / 원시 인류의 생존을 위한 싸움에서.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">must have p.p. (과거 강한 추측)</span> ▶ <span class="gr-ex">must have resulted in advantages</span> ★ <span class="gr-pt">"~했음에 틀림없다"; 과거 사실에 대한 단정적 추측</span></li>
+          <li>◆ <span class="gr-name">result in (결과를 초래하다)</span> ▶ <span class="gr-ex">resulted in advantages</span> ★ <span class="gr-pt">"~을 가져오다, 야기하다"; result from(~로부터 비롯되다)과 구별</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ③ 핵심단어 -->
+    <div class="tab-pane" id="p96-t3">
+      <h2 class="section-h">③ 핵심 단어 및 표현</h2>
+      <div class="card">
+        <div class="vocab-item"><span class="vocab-word">disorder</span><span class="vocab-pos">n.</span><span class="vocab-mean">무질서; 장애</span><span class="vocab-derive">disordered (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">mankind</span><span class="vocab-pos">n.</span><span class="vocab-mean">인류 (= humankind)</span><span class="vocab-derive">man (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">prehistoric</span><span class="vocab-pos">adj.</span><span class="vocab-mean">선사 시대의</span><span class="vocab-derive">prehistory (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">categorize</span><span class="vocab-pos">v.</span><span class="vocab-mean">분류하다</span><span class="vocab-derive">category (n.), categorical (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">poisonous</span><span class="vocab-pos">adj.</span><span class="vocab-mean">독이 있는, 유독한</span><span class="vocab-derive">poison (n./v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">variety</span><span class="vocab-pos">n.</span><span class="vocab-mean">종류, 다양성</span><span class="vocab-derive">various (adj.), vary (v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">alert</span><span class="vocab-pos">v./adj.</span><span class="vocab-mean">경고하다; 경계하는</span><span class="vocab-derive">alertness (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">prey</span><span class="vocab-pos">n.</span><span class="vocab-mean">사냥감, 먹이</span><span class="vocab-derive">predator (n. 포식자)</span></div>
+        <div class="vocab-item"><span class="vocab-word">guard duty</span><span class="vocab-pos">n.</span><span class="vocab-mean">보초 임무, 경계 근무</span><span class="vocab-derive">guard (n./v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">archaeological</span><span class="vocab-pos">adj.</span><span class="vocab-mean">고고학의</span><span class="vocab-derive">archaeology (n.), archaeologist (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">date back to</span><span class="vocab-pos">phr.</span><span class="vocab-mean">~까지 거슬러 올라가다</span><span class="vocab-derive">date (v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">establish</span><span class="vocab-pos">v.</span><span class="vocab-mean">설립하다, 확립하다</span><span class="vocab-derive">established (adj.), establishment (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">hunter-gatherer</span><span class="vocab-pos">n.</span><span class="vocab-mean">수렵·채집인</span><span class="vocab-derive">hunt (v.), gather (v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">anthropologist</span><span class="vocab-pos">n.</span><span class="vocab-mean">인류학자</span><span class="vocab-derive">anthropology (n.), anthropological (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">branch off</span><span class="vocab-pos">phr.</span><span class="vocab-mean">갈라져 나오다, 분기하다</span><span class="vocab-derive">branch (n. 가지)</span></div>
+        <div class="vocab-item"><span class="vocab-word">ancestor</span><span class="vocab-pos">n.</span><span class="vocab-mean">조상, 선조</span><span class="vocab-derive">ancestral (adj.); 반의어: descendant</span></div>
+        <div class="vocab-item"><span class="vocab-word">thrive</span><span class="vocab-pos">v.</span><span class="vocab-mean">번성하다, 잘 자라다</span><span class="vocab-derive">thriving (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">die off</span><span class="vocab-pos">phr.</span><span class="vocab-mean">차례로 죽다, 점차 사라지다(멸종하다)</span><span class="vocab-derive">die (v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">organized</span><span class="vocab-pos">adj.</span><span class="vocab-mean">조직적인, 정돈된</span><span class="vocab-derive">organize (v.), organization (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">excavated</span><span class="vocab-pos">adj.</span><span class="vocab-mean">발굴된</span><span class="vocab-derive">excavate (v.), excavation (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">remains</span><span class="vocab-pos">n. (pl.)</span><span class="vocab-mean">유물, 잔존물; 유해</span><span class="vocab-derive">remain (v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">preference</span><span class="vocab-pos">n.</span><span class="vocab-mean">선호</span><span class="vocab-derive">prefer (v.), preferable (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">result in</span><span class="vocab-pos">phr.</span><span class="vocab-mean">~을 초래하다</span><span class="vocab-derive">result (n./v.); cf. result from</span></div>
+      </div>
+    </div>
+
+    <!-- ④ 전문해석 -->
+    <div class="tab-pane" id="p96-t4">
+      <h2 class="section-h">④ 전문 해석 (Translation)</h2>
+      <div class="card">
+        <p class="translation">한때 이 세상은 혼란과 무질서로 가득 차 있던 시기가 있었다. 그러던 중 인류가 등장했다. 선사시대 사람들도 처음에는 다른 대부분의 동물들보다 그리 덜 어수선했던 것은 아니었을 것이다. 그러나 점차 그들은 다음과 같은 기술을 발전시켜 갔다. 즉, 버섯을 독이 있는 종류와 없는 종류로 분류하는 기술, 사냥감에게 위험을 알릴 수 있는 사람의 흔적을 사냥터에서 없애는 기술, 그리고 보초 근무의 교대를 짜는 기술이었다. 150만 년 전까지 거슬러 올라가는 고고학 유적지들은 초기 인류가 도구 보관 구역을 따로 마련했고, 기원전 2만 년경에는 일부 수렵·채집민들이 식사하는 곳, 요리하는 곳, 쓰레기를 버리는 곳, 심지어 돌을 깎는 것과 같은 여가 활동을 위한 별도의 구역까지 두었음을 시사한다. 인류학자들은 50만 년 전에 우리의 조상 호모 사피엔스로부터 갈라져 나와 십만 년 동안 유럽에서 번성했던 인류의 한 종, 즉 네안데르탈인이 우리 원시 조상들보다 덜 조직적이었던 것으로 보여 멸종했다고 주장해왔다. 더 어수선했던 네안데르탈 유적지에서 발굴된 유물로 판단해 볼 때 그렇다는 것이다. 분명히, 특정한 형태의 질서에 대한 선호는 원시 인류의 생존을 위한 싸움에서 이점을 가져왔음에 틀림없다.</p>
+      </div>
+    </div>
+
+    <!-- ⑤ 주제·요지 -->
+    <div class="tab-pane" id="p96-t5">
+      <h2 class="section-h">⑤ 주제·요지·구조</h2>
+      <div class="card">
+        <div class="topic-block">
+          <span class="topic-label">TOPIC 주제</span>
+          <p class="topic-text">질서·정리에 대한 선호가 원시 인류의 생존과 진화에 가져다준 이점</p>
+        </div>
+        <div class="topic-block">
+          <span class="topic-label">MAIN IDEA 요지</span>
+          <p class="topic-text">처음에는 다른 동물과 다를 바 없이 무질서했던 인류가 점차 분류·구역화·일정 관리 등 "질서를 만드는 기술"을 발전시켰고, 이러한 질서에 대한 선호는 네안데르탈인과의 경쟁에서 호모 사피엔스가 살아남는 결정적 생존상의 이점이 되었다.</p>
+        </div>
+        <div class="topic-block">
+          <span class="topic-label">STRUCTURE 구조</span>
+          <div class="structure-step"><span class="step-tag">[도입]</span> 무질서한 세상 → 인류 등장 → 처음엔 다른 동물과 비슷</div>
+          <div class="structure-step"><span class="step-tag">[전개1]</span> 점진적 질서화 — 분류, 사냥터 관리, 보초 근무 일정</div>
+          <div class="structure-step"><span class="step-tag">[전개2]</span> 고고학적 증거 — 도구 보관 구역, 식사·요리·쓰레기·여가 구역 분리</div>
+          <div class="structure-step"><span class="step-tag">[대조]</span> 네안데르탈인 — 덜 조직적 → 멸종</div>
+          <div class="structure-step"><span class="step-tag">[결론]</span> 질서에 대한 선호 = 생존 경쟁의 결정적 이점</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑥ 배경지식 -->
+    <div class="tab-pane" id="p96-t6">
+      <h2 class="section-h">⑥ 배경지식 (Background Knowledge)</h2>
+      <div class="bg-knowledge">
+        <h4>🦴 네안데르탈인(Neanderthals)과 호모 사피엔스</h4>
+        <p>네안데르탈인은 약 40만 년 전부터 약 4만 년 전까지 유럽과 서아시아에서 살았던 인류의 한 종(<em>Homo neanderthalensis</em>)이다. 호모 사피엔스보다 먼저 유럽에 정착해 빙하기에도 적응한 강인한 종족이었으나, 약 4만 년 전 호모 사피엔스가 유럽에 진출한 이후 점차 사라졌다. 본문에서는 그 멸종 원인을 "조직성·정돈성의 부족"이라는 관점에서 설명하고 있다.</p>
+        <p style="color:#7f6000;font-style:italic">※ 본문은 50만 년 전 호모 사피엔스로부터 분기됐다고 표현하지만, 최신 연구는 양 종이 약 60~80만 년 전 공통 조상에서 갈라진 것으로 본다. 본문은 학설의 한 관점이다.</p>
+
+        <h4>📅 시간 단위 정리</h4>
+        <p>본문에 나오는 시간 척도:<br>
+        • <strong>1.5 million years ago</strong>: 약 150만 년 전 — 호모 에렉투스(Homo erectus) 시대<br>
+        • <strong>500,000 years ago (half a million)</strong>: 약 50만 년 전 — 본문의 네안데르탈 분기 시점<br>
+        • <strong>20,000 BC</strong>: 기원전 2만 년 — 후기 구석기 시대, 라스코·알타미라 동굴벽화 시기<br>
+        • <strong>100,000 years</strong>: 네안데르탈인의 유럽 번성 기간</p>
+
+        <h4>🏛️ 고고학적 "구역화"의 의미</h4>
+        <p>한 거주지 안에서 식사·요리·도구 보관·쓰레기 처리·여가 활동의 공간을 분리한다는 것은, 단순한 정리정돈이 아니라 <strong>인지적 추상화 능력</strong>의 증거다. "어디서 무엇을 한다"라는 규칙을 만들고 공동체가 공유한다는 것은 곧 사회적 협력과 계획 능력의 출발점으로 간주된다. 인류학자들은 이를 <em>"behavioral modernity(행동의 현대성)"</em>의 지표 중 하나로 본다.</p>
+
+        <h4>⚖️ 다윈의 자연선택과 본문의 결론</h4>
+        <p>본문 마지막의 "preference for order ... must have resulted in advantages ... in the fight for survival"은 다윈의 적자생존 개념을 인간의 인지적 특성에 적용한 것이다. 즉, 더 잘 정돈된 집단이 식량을 더 효율적으로 관리하고, 위험을 더 잘 예방하며, 결국 더 많은 후손을 남길 수 있었다는 의미다.</p>
+      </div>
+    </div>
+
+    <!-- ⑦ 변형문제 -->
+    <div class="tab-pane" id="p96-t7">
+      <h2 class="section-h">⑦ 변형문제 (Practice Quiz)</h2>
+
+      <div class="quiz-q">
+        <div class="quiz-num">Q1. 다음 글의 주제로 가장 적절한 것은?<span class="quiz-type">주제 추론</span></div>
+        <ul class="opts" id="p96-q1">
+          <li onclick="check(this,'p96','q1',false)"><span class="opt-num">①</span>네안데르탈인의 신체적 특징과 기원</li>
+          <li onclick="check(this,'p96','q1',false)"><span class="opt-num">②</span>고고학자들의 발굴 방법론과 한계</li>
+          <li onclick="check(this,'p96','q1',true)"><span class="opt-num">③</span>질서에 대한 선호가 원시 인류의 생존에 기여한 방식</li>
+          <li onclick="check(this,'p96','q1',false)"><span class="opt-num">④</span>선사시대 도구의 발전 단계</li>
+          <li onclick="check(this,'p96','q1',false)"><span class="opt-num">⑤</span>수렵·채집 사회의 식습관과 영양</li>
+        </ul>
+        <div class="feedback" id="p96-q1-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p96','q1')">↺ 다시 풀기</button>
+      </div>
+
+      <div class="quiz-q">
+        <div class="quiz-num">Q2. 다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="quiz-type">빈칸 추론</span></div>
+        <div class="quiz-passage">
+          Anthropologists have argued that the Neanderthals died off because they seemed to be <em>__________</em> than our own primitive ancestors, judging by the excavated remains of the messier Neanderthal sites.
+        </div>
+        <ul class="opts" id="p96-q2">
+          <li onclick="check(this,'p96','q2',false)"><span class="opt-num">①</span>far more advanced</li>
+          <li onclick="check(this,'p96','q2',false)"><span class="opt-num">②</span>much taller and stronger</li>
+          <li onclick="check(this,'p96','q2',true)"><span class="opt-num">③</span>less organized</li>
+          <li onclick="check(this,'p96','q2',false)"><span class="opt-num">④</span>more sociable</li>
+          <li onclick="check(this,'p96','q2',false)"><span class="opt-num">⑤</span>better at hunting</li>
+        </ul>
+        <div class="feedback" id="p96-q2-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p96','q2')">↺ 다시 풀기</button>
+      </div>
+
+      <div class="quiz-q">
+        <div class="quiz-num">Q3. 다음 글의 밑줄 친 부분 중 어법상 틀린 것은?<span class="quiz-type">어법</span></div>
+        <div class="quiz-passage">
+          There was once a time ① <u>when</u> the world was full of mess. Prehistoric men ② <u>wouldn't</u> at first have been less messy than other animals. They developed a skill for categorizing mushrooms ③ <u>into</u> poisonous and nonpoisonous varieties. Archaeological sites dating as far back as 1.5 million years ④ <u>suggests</u> that early humans established storage areas. A preference for order must ⑤ <u>have resulted</u> in advantages in their fight for survival.
+        </div>
+        <ul class="opts" id="p96-q3">
+          <li onclick="check(this,'p96','q3',false)"><span class="opt-num">①</span>when</li>
+          <li onclick="check(this,'p96','q3',false)"><span class="opt-num">②</span>wouldn't</li>
+          <li onclick="check(this,'p96','q3',false)"><span class="opt-num">③</span>into</li>
+          <li onclick="check(this,'p96','q3',true)"><span class="opt-num">④</span>suggests</li>
+          <li onclick="check(this,'p96','q3',false)"><span class="opt-num">⑤</span>have resulted</li>
+        </ul>
+        <div class="feedback" id="p96-q3-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p96','q3')">↺ 다시 풀기</button>
+      </div>
+
+      <div class="quiz-q">
+        <div class="quiz-num">Q4. 윗글의 내용과 일치하지 <strong>않는</strong> 것은?<span class="quiz-type">내용 일치</span></div>
+        <ul class="opts" id="p96-q4">
+          <li onclick="check(this,'p96','q4',false)"><span class="opt-num">①</span>선사시대 사람들도 초기에는 다른 동물과 비슷한 정도로 어수선했을 것이다.</li>
+          <li onclick="check(this,'p96','q4',false)"><span class="opt-num">②</span>인간은 점차 버섯을 분류하는 능력을 발달시켰다.</li>
+          <li onclick="check(this,'p96','q4',false)"><span class="opt-num">③</span>기원전 2만 년경 일부 인류는 식사, 요리, 쓰레기 처리 공간을 분리했다.</li>
+          <li onclick="check(this,'p96','q4',true)"><span class="opt-num">④</span>네안데르탈인은 우리 조상보다 더 조직적이었기 때문에 멸종했다.</li>
+          <li onclick="check(this,'p96','q4',false)"><span class="opt-num">⑤</span>질서에 대한 선호는 생존상의 이점을 가져온 것으로 추정된다.</li>
+        </ul>
+        <div class="feedback" id="p96-q4-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p96','q4')">↺ 다시 풀기</button>
+      </div>
+
+      <div class="essay-q">
+        <div class="quiz-num">서술형 1. 빈칸 요약<span class="quiz-type">빈칸 채우기</span></div>
+        <div class="essay-cond">
+          <strong>[조건]</strong> 본문에서 알맞은 단어 한 개씩을 찾아 빈칸 (A), (B)에 쓰시오.
+        </div>
+        <div class="quiz-passage">
+          A preference for certain types of <strong>(A)</strong> __________ gave primitive humans clear advantages in their fight for <strong>(B)</strong> __________, while less organized groups such as the Neanderthals eventually died off.
+        </div>
+        <textarea class="essay-area" placeholder="(A) ___________________&#10;(B) ___________________"></textarea>
+        <button type="button" class="ans-toggle" onclick="toggleAns('p96-e1')">모범답안 보기 ▼</button>
+        <div class="ans-box" id="p96-e1">
+          <strong>모범답안</strong><br>
+          (A) <strong>order</strong><br>
+          (B) <strong>survival</strong><br>
+          <em style="color:#555">→ 마지막 문장 "a preference for certain types of order must have resulted in advantages in primitive men's fight for survival"에서 직접 도출.</em>
+        </div>
+      </div>
+
+      <div class="essay-q">
+        <div class="quiz-num">서술형 2. 영어 서술<span class="quiz-type">영작</span></div>
+        <div class="essay-cond">
+          <strong>[조건]</strong> 본문에서 언급된 초기 인류가 발전시킨 "질서 만드는 기술" 세 가지를 영어 명사구(noun phrase)로 각각 한 줄씩 쓰시오. (본문 표현 활용 가능)
+        </div>
+        <textarea class="essay-area" placeholder="1) &#10;2) &#10;3) "></textarea>
+        <button type="button" class="ans-toggle" onclick="toggleAns('p96-e2')">모범답안 보기 ▼</button>
+        <div class="ans-box" id="p96-e2">
+          <strong>모범답안</strong><br>
+          1) <strong>Categorizing mushrooms into poisonous and nonpoisonous varieties</strong> (버섯을 독성과 비독성으로 분류하는 것)<br>
+          2) <strong>Keeping hunting grounds free of human signs that would alert prey</strong> (사냥감에게 경고가 될 인간의 흔적이 없는 사냥터 유지)<br>
+          3) <strong>Scheduling shifts for guard duty</strong> (보초 근무 교대 일정 짜기)<br>
+          <em style="color:#555">→ ④문장에서 a skill for V-ing 세 항목을 그대로 활용.</em>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== E-97 패널 ============== -->
+<section class="panel" id="p97">
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="pid-tag">E-97</span>
+      <h1>Stomata and the Plant&rsquo;s Balancing Act</h1>
+    </div>
+    <div class="academy">에듀케레 영수학원 · 천일문 독해 Essential</div>
+  </div>
+  <div class="tabs">
+    <button type="button" class="tab-btn active" onclick="showTab('p97','t1')"><span class="tab-num">①</span>전문</button>
+    <button type="button" class="tab-btn" onclick="showTab('p97','t2')"><span class="tab-num">②</span>문장분석</button>
+    <button type="button" class="tab-btn" onclick="showTab('p97','t3')"><span class="tab-num">③</span>핵심단어·표현</button>
+    <button type="button" class="tab-btn" onclick="showTab('p97','t4')"><span class="tab-num">④</span>전문해석</button>
+    <button type="button" class="tab-btn" onclick="showTab('p97','t5')"><span class="tab-num">⑤</span>주제·요지</button>
+    <button type="button" class="tab-btn" onclick="showTab('p97','t6')"><span class="tab-num">⑥</span>배경지식</button>
+    <button type="button" class="tab-btn" onclick="showTab('p97','t7')"><span class="tab-num">⑦</span>변형문제</button>
+  </div>
+  <div class="content">
+
+    <!-- ① 전문 -->
+    <div class="tab-pane active" id="p97-t1">
+      <h2 class="section-h">① 전문 (Full Passage)</h2>
+      <div class="full-passage-meta">
+        <span>총 7문장</span><span>약 175 words</span><span>주제: 식물생리학·생물</span>
+      </div>
+      <div class="full-passage">
+        Many plants don&rsquo;t live in environments where the soil is constantly moist, which would allow them to leave their stomata open all the time. If they keep their stomata open, the stomata will continuously release water. Their roots would then pull all the available water from the soil, drying it out and leading to a water deficit. If the water deficit becomes too severe, the continuous streams of water inside the plant&rsquo;s hydration system will break apart, causing the plant to experience dehydration. When plants suffer from broken leaves, they channel energy into recovery, healing the damage and strengthening defenses against pests drawn to the area. Bubbles will form inside the cells, and the leaves will no longer be able to pull water upward; It will be like sucking on a straw with a hole in the side, and the plant will die. Because plants can&rsquo;t photosynthesize without losing water to the air, they must perform a balancing act, opening their stomata for as long as possible to maximize photosynthesis, but not so long that they lose too much water.
+      </div>
+    </div>
+
+    <!-- ② 문장분석 -->
+    <div class="tab-pane" id="p97-t2">
+      <h2 class="section-h">② 문장 분석 (Sentence Analysis)</h2>
+
+      <div class="sent-block">
+        <div class="sent-num">①</div>
+        <div class="en-box">Many plants don&rsquo;t live in environments <em>where</em> the soil is constantly moist, <u>which</u> would allow them to leave their stomata open all the time.</div>
+        <div class="literal">
+          <span class="literal-en">Many plants don't live in environments / where the soil is constantly moist, / which would allow them / to leave their stomata open / all the time.</span>
+          <span class="literal-ko">▶ 많은 식물들은 환경에 살지 않는다 / 토양이 끊임없이 촉촉한 곳에서, / 그것은 그들에게 허용해 줄 것이다 / 자신의 기공을 열어 두도록 / 항상.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">관계부사 where (장소)</span> ▶ <span class="gr-ex">environments where the soil is ... moist</span> ★ <span class="gr-pt">선행사 environments를 받음; in which와 동등</span></li>
+          <li>◆ <span class="gr-name">계속적 용법 관계대명사 which</span> ▶ <span class="gr-ex">..., which would allow them ...</span> ★ <span class="gr-pt">앞 절 전체나 "토양이 늘 촉촉한 환경에 사는 것"을 선행사로; 콤마+which</span></li>
+          <li>◆ <span class="gr-name">allow + 목적어 + to V (5형식)</span> ▶ <span class="gr-ex">allow them to leave their stomata open</span> ★ <span class="gr-pt">"~가 ~하도록 허용하다"; leave + 목 + 보(open: 형용사)는 5형식</span></li>
+          <li>◆ <span class="gr-name">가정법 would (가상)</span> ▶ <span class="gr-ex">which would allow ...</span> ★ <span class="gr-pt">현실은 그렇지 않으므로 가정법; "그렇다면 ~하게 해 줄 것이다"</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">②</div>
+        <div class="en-box"><em>If</em> they keep their stomata open, the stomata <u>will continuously release</u> water.</div>
+        <div class="literal">
+          <span class="literal-en">If they keep their stomata open, / the stomata will continuously release water.</span>
+          <span class="literal-ko">▶ 만약 그들이 기공을 열린 상태로 유지한다면, / 기공은 끊임없이 물을 방출할 것이다.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">조건절 If + 현재 / 주절 will (단순조건)</span> ▶ <span class="gr-ex">If they keep ... will release</span> ★ <span class="gr-pt">실현 가능한 미래 조건; 가정법 아님</span></li>
+          <li>◆ <span class="gr-name">keep + 목적어 + 형용사 (5형식)</span> ▶ <span class="gr-ex">keep their stomata open</span> ★ <span class="gr-pt">"~을 ~한 상태로 유지하다"; open은 형용사</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">③</div>
+        <div class="en-box">Their roots <u>would</u> then pull all the available water from the soil, <em>drying</em> it out and <em>leading</em> to a water deficit.</div>
+        <div class="literal">
+          <span class="literal-en">Their roots would then pull / all the available water / from the soil, / drying it out / and leading to a water deficit.</span>
+          <span class="literal-ko">▶ 그들의 뿌리는 그러면 끌어당길 것이다 / 이용 가능한 모든 물을 / 토양에서, / 그것(토양)을 마르게 하면서 / 그리고 물 부족으로 이어지게 하면서.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">분사구문 (drying ... and leading ...)</span> ▶ <span class="gr-ex">..., drying it out and leading to a water deficit</span> ★ <span class="gr-pt">결과·연속 동작 분사구문 (and they dry ... and lead ...); 두 분사 병렬</span></li>
+          <li>◆ <span class="gr-name">구동사 dry out (~을 마르게 하다)</span> ▶ <span class="gr-ex">drying it out</span> ★ <span class="gr-pt">목적어가 대명사일 때 it은 dry와 out 사이에 위치</span></li>
+          <li>◆ <span class="gr-name">lead to + 명사 (~로 이어지다)</span> ▶ <span class="gr-ex">leading to a water deficit</span> ★ <span class="gr-pt">"~을 야기하다"; result in과 유사</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">④</div>
+        <div class="en-box"><em>If</em> the water deficit becomes too severe, the continuous streams of water inside the plant&rsquo;s hydration system <u>will break apart</u>, <em>causing</em> the plant to experience dehydration.</div>
+        <div class="literal">
+          <span class="literal-en">If the water deficit becomes too severe, / the continuous streams of water / inside the plant's hydration system / will break apart, / causing the plant / to experience dehydration.</span>
+          <span class="literal-ko">▶ 만약 물 부족이 너무 심해지면, / 물의 연속적인 흐름은 / 식물의 수분 공급 체계 내부의 / 끊어질 것이다, / 식물로 하여금 ~하게 만들면서 / 탈수를 겪도록.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">If + 현재 / will (조건문)</span> ▶ <span class="gr-ex">If ... becomes ... will break apart</span> ★ <span class="gr-pt">조건의 if; 현재시제로 미래 의미 표현</span></li>
+          <li>◆ <span class="gr-name">분사구문 (causing)</span> ▶ <span class="gr-ex">..., causing the plant to experience ...</span> ★ <span class="gr-pt">결과 분사구문; "그 결과 ~하게 만든다"</span></li>
+          <li>◆ <span class="gr-name">cause + 목적어 + to V</span> ▶ <span class="gr-ex">causing the plant to experience</span> ★ <span class="gr-pt">"~가 ~하게 만들다"; 5형식 cause</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑤</div>
+        <div class="en-box"><em>When</em> plants suffer from broken leaves, they <u>channel</u> energy into recovery, <em>healing</em> the damage and <em>strengthening</em> defenses against pests <u>drawn</u> to the area.</div>
+        <div class="literal">
+          <span class="literal-en">When plants suffer from broken leaves, / they channel energy / into recovery, / healing the damage / and strengthening defenses / against pests drawn to the area.</span>
+          <span class="literal-ko">▶ 식물이 잎이 부러지는 것에 시달릴 때, / 그들은 에너지를 돌린다 / 회복으로, / 손상을 치유하면서 / 그리고 방어를 강화하면서 / 그 부위로 끌려오는 해충에 대한.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">시간 부사절 when</span> ▶ <span class="gr-ex">When plants suffer from ...</span> ★ <span class="gr-pt">"~할 때"; suffer from = ~로 고통받다</span></li>
+          <li>◆ <span class="gr-name">channel A into B</span> ▶ <span class="gr-ex">channel energy into recovery</span> ★ <span class="gr-pt">"A를 B로 향하게 하다, 돌리다"; 동사 channel(돌리다)의 활용</span></li>
+          <li>◆ <span class="gr-name">분사구문 병렬 (healing ... and strengthening ...)</span> ▶ <span class="gr-ex">..., healing the damage and strengthening defenses</span> ★ <span class="gr-pt">두 개의 V-ing가 병렬; 부대상황 분사구문</span></li>
+          <li>◆ <span class="gr-name">과거분사 후치 수식 (drawn)</span> ▶ <span class="gr-ex">pests drawn to the area</span> ★ <span class="gr-pt">"(which are) drawn"의 축약; "그 부위로 이끌리는 해충"</span></li>
+        </ul>
+        <p style="font-size:11px;color:#888;margin-top:6px">※ 본 문장은 식물의 손상 회복 메커니즘을 설명하는 삽입적 정보로, 본문 흐름상 다소 결이 다른 정보입니다. 원문 그대로 분석하였습니다.</p>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑥</div>
+        <div class="en-box">Bubbles <u>will form</u> inside the cells, and the leaves will no longer be able <em>to pull</em> water upward; <em>It will be like</em> sucking on a straw with a hole in the side, and the plant will die.</div>
+        <div class="literal">
+          <span class="literal-en">Bubbles will form inside the cells, / and the leaves will no longer be able to pull water upward; / It will be like sucking on a straw / with a hole in the side, / and the plant will die.</span>
+          <span class="literal-ko">▶ 거품(공기방울)이 세포 내부에 형성될 것이다, / 그리고 잎들은 더 이상 물을 위로 끌어올릴 수 없을 것이다; / 그것은 빨대를 빠는 것과 같을 것이다 / 옆구리에 구멍이 난, / 그리고 식물은 죽을 것이다.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">be able to V (~할 수 있다)</span> ▶ <span class="gr-ex">will no longer be able to pull</span> ★ <span class="gr-pt">"미래에 더 이상 ~할 수 없을 것이다"; can의 미래형</span></li>
+          <li>◆ <span class="gr-name">be like + 동명사 (~과 같다)</span> ▶ <span class="gr-ex">It will be like sucking on a straw</span> ★ <span class="gr-pt">전치사 like + V-ing → 비유 표현</span></li>
+          <li>◆ <span class="gr-name">전치사구 후치 수식 (with a hole)</span> ▶ <span class="gr-ex">a straw with a hole in the side</span> ★ <span class="gr-pt">a straw를 with절이 수식; "옆에 구멍 난 빨대"</span></li>
+        </ul>
+      </div>
+
+      <div class="sent-block">
+        <div class="sent-num">⑦</div>
+        <div class="en-box"><em>Because</em> plants can&rsquo;t photosynthesize <u>without losing</u> water to the air, they must perform a balancing act, <em>opening</em> their stomata <u>for as long as possible</u> to maximize photosynthesis, but <em>not so long that</em> they lose too much water.</div>
+        <div class="literal">
+          <span class="literal-en">Because plants can't photosynthesize / without losing water to the air, / they must perform a balancing act, / opening their stomata / for as long as possible / to maximize photosynthesis, / but not so long that they lose too much water.</span>
+          <span class="literal-ko">▶ 식물은 광합성을 할 수 없기 때문에 / 공기 중에 물을 잃지 않고는, / 그들은 균형 잡기 행위를 해야 한다, / 자신의 기공을 열면서 / 가능한 한 오래 / 광합성을 극대화하기 위해, / 하지만 너무 많은 물을 잃을 만큼 그렇게 오래는 아니게.</span>
+        </div>
+        <ul class="grammar-list">
+          <li>◆ <span class="gr-name">이유 접속사 because</span> ▶ <span class="gr-ex">Because plants can't photosynthesize ...</span> ★ <span class="gr-pt">"~ 때문에"; 종속절을 이끄는 부사절</span></li>
+          <li>◆ <span class="gr-name">without + 동명사 (~없이)</span> ▶ <span class="gr-ex">without losing water</span> ★ <span class="gr-pt">"~하지 않고는"; 이중 부정으로 "반드시 ~한다"의 의미 형성</span></li>
+          <li>◆ <span class="gr-name">분사구문 (opening)</span> ▶ <span class="gr-ex">..., opening their stomata for ...</span> ★ <span class="gr-pt">"균형 잡기"의 구체적 방식 설명; 동시동작 분사구문</span></li>
+          <li>◆ <span class="gr-name">as ~ as possible</span> ▶ <span class="gr-ex">for as long as possible</span> ★ <span class="gr-pt">"가능한 한 오래"; "as ~ as one can"과 같음</span></li>
+          <li>◆ <span class="gr-name">so ... that ~ 구문 (정도)</span> ▶ <span class="gr-ex">not so long that they lose too much water</span> ★ <span class="gr-pt">"~할 만큼 그렇게 ~한 (것은 아닌)"; that절 = 결과</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ③ 핵심단어 -->
+    <div class="tab-pane" id="p97-t3">
+      <h2 class="section-h">③ 핵심 단어 및 표현</h2>
+      <div class="card">
+        <div class="vocab-item"><span class="vocab-word">moist</span><span class="vocab-pos">adj.</span><span class="vocab-mean">촉촉한, 습한</span><span class="vocab-derive">moisture (n. 수분), moisten (v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">stomata</span><span class="vocab-pos">n. (pl.)</span><span class="vocab-mean">(식물) 기공 (단수: stoma)</span><span class="vocab-derive">—</span></div>
+        <div class="vocab-item"><span class="vocab-word">continuously</span><span class="vocab-pos">adv.</span><span class="vocab-mean">끊임없이, 연속적으로</span><span class="vocab-derive">continuous (adj.), continue (v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">release</span><span class="vocab-pos">v.</span><span class="vocab-mean">방출하다, 풀어주다</span><span class="vocab-derive">released (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">available</span><span class="vocab-pos">adj.</span><span class="vocab-mean">이용 가능한</span><span class="vocab-derive">availability (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">dry out</span><span class="vocab-pos">phr.</span><span class="vocab-mean">바싹 마르다, 마르게 하다</span><span class="vocab-derive">dry (adj./v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">deficit</span><span class="vocab-pos">n.</span><span class="vocab-mean">부족, 결핍; 적자</span><span class="vocab-derive">deficient (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">severe</span><span class="vocab-pos">adj.</span><span class="vocab-mean">심한, 가혹한</span><span class="vocab-derive">severity (n.), severely (adv.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">stream</span><span class="vocab-pos">n.</span><span class="vocab-mean">흐름, 시내</span><span class="vocab-derive">streaming (adj./n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">hydration</span><span class="vocab-pos">n.</span><span class="vocab-mean">수분 공급, 수화</span><span class="vocab-derive">hydrate (v.), dehydrate (v. 탈수시키다)</span></div>
+        <div class="vocab-item"><span class="vocab-word">break apart</span><span class="vocab-pos">phr.</span><span class="vocab-mean">부서지다, 끊어지다</span><span class="vocab-derive">break (v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">dehydration</span><span class="vocab-pos">n.</span><span class="vocab-mean">탈수, 수분 결핍</span><span class="vocab-derive">dehydrate (v.); 반의어: hydration</span></div>
+        <div class="vocab-item"><span class="vocab-word">suffer from</span><span class="vocab-pos">phr.</span><span class="vocab-mean">~로 고통받다, ~를 앓다</span><span class="vocab-derive">suffering (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">channel</span><span class="vocab-pos">v.</span><span class="vocab-mean">(에너지·자원을) ~로 돌리다</span><span class="vocab-derive">channel (n. 통로)</span></div>
+        <div class="vocab-item"><span class="vocab-word">recovery</span><span class="vocab-pos">n.</span><span class="vocab-mean">회복</span><span class="vocab-derive">recover (v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">heal</span><span class="vocab-pos">v.</span><span class="vocab-mean">치유하다, 낫게 하다</span><span class="vocab-derive">healing (n.), healer (n.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">strengthen</span><span class="vocab-pos">v.</span><span class="vocab-mean">강화하다</span><span class="vocab-derive">strength (n.), strong (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">defense</span><span class="vocab-pos">n.</span><span class="vocab-mean">방어, 방어 수단</span><span class="vocab-derive">defend (v.), defensive (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">pest</span><span class="vocab-pos">n.</span><span class="vocab-mean">해충, 유해 동물</span><span class="vocab-derive">pesticide (n. 살충제)</span></div>
+        <div class="vocab-item"><span class="vocab-word">draw to</span><span class="vocab-pos">phr.</span><span class="vocab-mean">~로 끌어당기다, ~로 이끌리다</span><span class="vocab-derive">draw (v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">photosynthesize</span><span class="vocab-pos">v.</span><span class="vocab-mean">광합성을 하다</span><span class="vocab-derive">photosynthesis (n.), photosynthetic (adj.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">balancing act</span><span class="vocab-pos">phr.</span><span class="vocab-mean">균형 잡기, 줄타기 행위</span><span class="vocab-derive">balance (n./v.)</span></div>
+        <div class="vocab-item"><span class="vocab-word">maximize</span><span class="vocab-pos">v.</span><span class="vocab-mean">극대화하다</span><span class="vocab-derive">maximum (n./adj.); 반의어: minimize</span></div>
+      </div>
+    </div>
+
+    <!-- ④ 전문해석 -->
+    <div class="tab-pane" id="p97-t4">
+      <h2 class="section-h">④ 전문 해석 (Translation)</h2>
+      <div class="card">
+        <p class="translation">많은 식물들은 토양이 늘 촉촉한 환경에 살고 있지 않은데, 만약 그런 환경에 산다면 식물은 항상 기공을 열어 둘 수 있을 것이다. 만약 식물이 기공을 계속 열어 둔다면, 기공은 끊임없이 물을 방출하게 된다. 그러면 뿌리는 토양에서 이용 가능한 모든 물을 끌어당기게 되어 토양을 말리고, 결국 물 부족 상태로 이어지게 된다. 만약 이 물 부족이 너무 심각해지면 식물의 수분 공급 체계 내부의 연속적인 물줄기가 끊어지게 되고, 그 결과 식물은 탈수를 겪게 된다. 식물은 잎이 손상되었을 때, 손상을 치유하고 그 부위로 이끌려 오는 해충에 대한 방어를 강화하면서 회복에 에너지를 쏟는다. 그러면 세포 안에 거품이 형성되고, 잎은 더 이상 물을 위로 끌어올릴 수 없게 된다. 이는 옆구리에 구멍이 난 빨대로 (음료를) 빠는 것과 같으며, 결국 식물은 죽고 만다. 식물은 공기 중으로 물을 잃지 않고는 광합성을 할 수 없기 때문에, 광합성을 극대화하기 위해 가능한 한 오랫동안 기공을 열어 두되, 너무 많은 물을 잃을 정도로 오래 열어 두지는 않는, 일종의 균형 잡기를 수행해야만 한다.</p>
+      </div>
+    </div>
+
+    <!-- ⑤ 주제·요지 -->
+    <div class="tab-pane" id="p97-t5">
+      <h2 class="section-h">⑤ 주제·요지·구조</h2>
+      <div class="card">
+        <div class="topic-block">
+          <span class="topic-label">TOPIC 주제</span>
+          <p class="topic-text">광합성과 수분 손실 사이에서 식물이 기공 개폐로 수행해야 하는 균형 행위(balancing act)</p>
+        </div>
+        <div class="topic-block">
+          <span class="topic-label">MAIN IDEA 요지</span>
+          <p class="topic-text">식물은 광합성을 하기 위해 기공을 열어야 하지만, 기공이 너무 오래 열려 있으면 물 부족과 탈수, 결국 죽음에 이르게 된다. 따라서 식물은 광합성을 최대화할 만큼 기공을 열되 수분 손실이 치명적이 되지 않을 만큼만 닫는, 미묘한 균형을 유지해야 한다.</p>
+        </div>
+        <div class="topic-block">
+          <span class="topic-label">STRUCTURE 구조</span>
+          <div class="structure-step"><span class="step-tag">[도입]</span> 대부분의 식물은 늘 촉촉한 환경에 살지 않음 → 기공을 항상 열 수 없음</div>
+          <div class="structure-step"><span class="step-tag">[과정1]</span> 기공이 계속 열림 → 물 방출 → 토양 마름 → 물 부족</div>
+          <div class="structure-step"><span class="step-tag">[과정2]</span> 물 부족 심화 → 수분 흐름 단절 → 탈수</div>
+          <div class="structure-step"><span class="step-tag">[비유]</span> 세포 내 거품 형성 → "옆에 구멍 난 빨대"처럼 작동 불가 → 죽음</div>
+          <div class="structure-step"><span class="step-tag">[결론]</span> 식물의 균형 행위: 광합성 극대화 vs. 과도한 수분 손실 회피</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑥ 배경지식 -->
+    <div class="tab-pane" id="p97-t6">
+      <h2 class="section-h">⑥ 배경지식 (Background Knowledge)</h2>
+      <div class="bg-knowledge">
+        <h4>🌿 기공(Stomata)이란?</h4>
+        <p>기공은 식물 잎의 표피에 있는 작은 구멍으로, 양쪽에 두 개의 공변세포(guard cell)가 있어 열고 닫을 수 있다. 보통 잎의 뒷면에 더 많이 분포하며, 1제곱밀리미터에 수십~수백 개가 있다. 기공은 두 가지 기능을 동시에 수행한다. ① 광합성에 필요한 <strong>이산화탄소(CO₂)</strong>를 흡수하고, ② 호흡과 광합성으로 생긴 <strong>산소(O₂)</strong>와 <strong>수증기</strong>를 방출한다.</p>
+
+        <h4>💧 광합성과 증산작용의 딜레마</h4>
+        <p>식물은 광합성(photosynthesis)을 하려면 반드시 기공을 열어 CO₂를 받아들여야 한다. 그러나 기공을 열면 동시에 잎 안의 수분이 수증기 형태로 빠져나가는 <strong>증산작용(transpiration)</strong>이 일어난다. 즉, "광합성을 하려면 물을 잃어야만 하는" 모순적인 구조다. 본문 마지막의 "they must perform a balancing act"가 바로 이 딜레마를 가리킨다.</p>
+
+        <h4>🌬️ 캐비테이션(Cavitation, 공동현상)</h4>
+        <p>식물은 뿌리 → 줄기 → 잎으로 물기둥이 이어진 "수분 공급 체계"를 가진다. 이 물기둥은 물 분자 사이의 응집력(cohesion)으로 끊어지지 않고 위로 올라간다. 그러나 토양이 너무 마르거나 증산작용이 과도하면 물기둥에 공기 방울(bubble)이 생겨 끊어지는데, 이를 캐비테이션이라 한다. 본문의 "the continuous streams of water ... will break apart" / "Bubbles will form inside the cells"는 이 현상을 묘사한 것이다. 캐비테이션이 광범위하게 일어나면 식물은 회복할 수 없고 죽는다.</p>
+
+        <h4>🥬 사막 식물의 진화 — CAM 광합성</h4>
+        <p>선인장과 같은 건조 지역 식물은 이 균형 문제를 해결하기 위해 특수한 광합성 방식인 <strong>CAM 광합성</strong>을 진화시켰다. 낮 동안에는 기공을 닫아 수분 손실을 최소화하고, 비교적 시원하고 습한 밤에 기공을 열어 CO₂를 흡수해 저장한 후 낮에 광합성을 한다. 이는 본문의 "balancing act"가 진화적으로 어떻게 발전했는지 보여주는 좋은 예다.</p>
+      </div>
+    </div>
+
+    <!-- ⑦ 변형문제 -->
+    <div class="tab-pane" id="p97-t7">
+      <h2 class="section-h">⑦ 변형문제 (Practice Quiz)</h2>
+
+      <div class="quiz-q">
+        <div class="quiz-num">Q1. 다음 글의 주제로 가장 적절한 것은?<span class="quiz-type">주제 추론</span></div>
+        <ul class="opts" id="p97-q1">
+          <li onclick="check(this,'p97','q1',false)"><span class="opt-num">①</span>식물 뿌리가 물을 흡수하는 다양한 방식</li>
+          <li onclick="check(this,'p97','q1',false)"><span class="opt-num">②</span>해충에 대한 식물의 면역 반응</li>
+          <li onclick="check(this,'p97','q1',true)"><span class="opt-num">③</span>광합성과 수분 손실 사이에서 식물이 수행하는 균형 행위</li>
+          <li onclick="check(this,'p97','q1',false)"><span class="opt-num">④</span>토양의 습도와 농작물 생산성의 관계</li>
+          <li onclick="check(this,'p97','q1',false)"><span class="opt-num">⑤</span>식물 세포 구조의 진화적 발달</li>
+        </ul>
+        <div class="feedback" id="p97-q1-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p97','q1')">↺ 다시 풀기</button>
+      </div>
+
+      <div class="quiz-q">
+        <div class="quiz-num">Q2. 다음 빈칸에 들어갈 말로 가장 적절한 것은?<span class="quiz-type">빈칸 추론</span></div>
+        <div class="quiz-passage">
+          Because plants can't photosynthesize without losing water to the air, they must perform a <em>__________</em>, opening their stomata for as long as possible to maximize photosynthesis, but not so long that they lose too much water.
+        </div>
+        <ul class="opts" id="p97-q2">
+          <li onclick="check(this,'p97','q2',false)"><span class="opt-num">①</span>simple repetition</li>
+          <li onclick="check(this,'p97','q2',false)"><span class="opt-num">②</span>complete shutdown</li>
+          <li onclick="check(this,'p97','q2',true)"><span class="opt-num">③</span>balancing act</li>
+          <li onclick="check(this,'p97','q2',false)"><span class="opt-num">④</span>random adjustment</li>
+          <li onclick="check(this,'p97','q2',false)"><span class="opt-num">⑤</span>permanent closure</li>
+        </ul>
+        <div class="feedback" id="p97-q2-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p97','q2')">↺ 다시 풀기</button>
+      </div>
+
+      <div class="quiz-q">
+        <div class="quiz-num">Q3. 다음 글의 밑줄 친 부분 중 어법상 틀린 것은?<span class="quiz-type">어법</span></div>
+        <div class="quiz-passage">
+          Many plants don't live in environments ① <u>where</u> the soil is constantly moist. If they keep their stomata ② <u>open</u>, the stomata will continuously release water. Their roots would then pull all the available water from the soil, ③ <u>drying</u> it out. If the water deficit becomes too severe, the streams of water will break apart, ④ <u>caused</u> the plant to experience dehydration. Plants must perform a balancing act, opening their stomata ⑤ <u>for as long as possible</u>.
+        </div>
+        <ul class="opts" id="p97-q3">
+          <li onclick="check(this,'p97','q3',false)"><span class="opt-num">①</span>where</li>
+          <li onclick="check(this,'p97','q3',false)"><span class="opt-num">②</span>open</li>
+          <li onclick="check(this,'p97','q3',false)"><span class="opt-num">③</span>drying</li>
+          <li onclick="check(this,'p97','q3',true)"><span class="opt-num">④</span>caused</li>
+          <li onclick="check(this,'p97','q3',false)"><span class="opt-num">⑤</span>for as long as possible</li>
+        </ul>
+        <div class="feedback" id="p97-q3-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p97','q3')">↺ 다시 풀기</button>
+      </div>
+
+      <div class="quiz-q">
+        <div class="quiz-num">Q4. 윗글의 내용과 일치하지 <strong>않는</strong> 것은?<span class="quiz-type">내용 일치</span></div>
+        <ul class="opts" id="p97-q4">
+          <li onclick="check(this,'p97','q4',false)"><span class="opt-num">①</span>많은 식물은 토양이 늘 촉촉하지 않은 환경에서 산다.</li>
+          <li onclick="check(this,'p97','q4',false)"><span class="opt-num">②</span>기공이 계속 열려 있으면 식물은 끊임없이 물을 방출한다.</li>
+          <li onclick="check(this,'p97','q4',false)"><span class="opt-num">③</span>물 부족이 심해지면 식물 내부의 물줄기가 끊어진다.</li>
+          <li onclick="check(this,'p97','q4',true)"><span class="opt-num">④</span>식물이 광합성을 하려면 공기 중으로 물을 잃지 않아야 한다.</li>
+          <li onclick="check(this,'p97','q4',false)"><span class="opt-num">⑤</span>잎이 물을 위로 끌어올릴 수 없게 되면 식물은 죽게 된다.</li>
+        </ul>
+        <div class="feedback" id="p97-q4-fb"></div>
+        <button type="button" class="reset-btn" onclick="reset('p97','q4')">↺ 다시 풀기</button>
+      </div>
+
+      <div class="essay-q">
+        <div class="quiz-num">서술형 1. 빈칸 요약<span class="quiz-type">빈칸 채우기</span></div>
+        <div class="essay-cond">
+          <strong>[조건]</strong> 본문에서 알맞은 단어 한 개씩을 찾아 빈칸 (A), (B)에 쓰시오.
+        </div>
+        <div class="quiz-passage">
+          Plants must keep their stomata open to <strong>(A)</strong> __________ photosynthesis, but if they stay open too long, the plant suffers a water <strong>(B)</strong> __________ that can ultimately lead to dehydration and death.
+        </div>
+        <textarea class="essay-area" placeholder="(A) ___________________&#10;(B) ___________________"></textarea>
+        <button type="button" class="ans-toggle" onclick="toggleAns('p97-e1')">모범답안 보기 ▼</button>
+        <div class="ans-box" id="p97-e1">
+          <strong>모범답안</strong><br>
+          (A) <strong>maximize</strong><br>
+          (B) <strong>deficit</strong><br>
+          <em style="color:#555">→ ⑦문장 "to maximize photosynthesis" + ③문장 "leading to a water deficit"에서 직접 도출.</em>
+        </div>
+      </div>
+
+      <div class="essay-q">
+        <div class="quiz-num">서술형 2. 우리말 서술<span class="quiz-type">서술형</span></div>
+        <div class="essay-cond">
+          <strong>[조건]</strong> 본문에서 비유로 사용된 "옆구리에 구멍이 난 빨대(a straw with a hole in the side)"가 식물의 어떤 상태를 비유하는지, 그 상태가 일어나는 원인과 결과를 포함하여 우리말로 2~3문장으로 서술하시오.
+        </div>
+        <textarea class="essay-area" placeholder="여기에 답안을 작성하세요. (2~3문장)"></textarea>
+        <button type="button" class="ans-toggle" onclick="toggleAns('p97-e2')">모범답안 보기 ▼</button>
+        <div class="ans-box" id="p97-e2">
+          <strong>모범답안</strong><br>
+          이 비유는 식물 세포 내부에 거품(공기방울)이 형성되어 잎이 더 이상 물을 위로 끌어올릴 수 없게 된 상태를 나타낸다. 그 원인은 물 부족이 너무 심해져 수분 공급 체계의 연속적인 물줄기가 끊어진 데 있으며, 옆에 구멍이 난 빨대로는 음료를 빨 수 없는 것처럼 식물 또한 더 이상 수분을 끌어올릴 수 없게 된다. 그 결과 식물은 결국 죽음에 이르게 된다.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<!-- 푸터 -->
+<div class="page-footer">
+  <div class="ac">에듀케레 영수학원 · 바른학습관</div>
+  경남 양산시 물금읍 · Tel. 055.363.8010 · 카카오채널 pf.kakao.com/_aEzYG<br>
+  © EDUCARE English &amp; Math Academy &nbsp;|&nbsp; 천일문 독해 Essential E-93~E-97 분석지
+</div>
+
+<script>
+// ========= 지문 패널 전환 =========
+function showPassage(id){
+  var panels = document.getElementsByClassName('panel');
+  for(var i=0;i<panels.length;i++){ panels[i].classList.remove('active'); }
+  var t = document.getElementById(id);
+  if(t){ t.classList.add('active'); }
+
+  var btns = document.getElementsByClassName('passage-btn');
+  for(var j=0;j<btns.length;j++){ btns[j].classList.remove('active'); }
+  // event 객체로 클릭한 버튼 활성화
+  if(window.event && window.event.currentTarget){
+    window.event.currentTarget.classList.add('active');
+  }
+  // 페이지 상단으로 스크롤
+  window.scrollTo(0,0);
+}
+
+// ========= 탭 전환 =========
+function showTab(panelId, tabId){
+  // 같은 패널 내 모든 tab-pane 비활성
+  var panel = document.getElementById(panelId);
+  if(!panel) return;
+  var panes = panel.getElementsByClassName('tab-pane');
+  for(var i=0;i<panes.length;i++){ panes[i].classList.remove('active'); }
+  var target = document.getElementById(panelId + '-' + tabId);
+  if(target){ target.classList.add('active'); }
+
+  // 같은 패널 내 tab-btn 활성화 토글
+  var tabBtns = panel.getElementsByClassName('tab-btn');
+  for(var j=0;j<tabBtns.length;j++){ tabBtns[j].classList.remove('active'); }
+  if(window.event && window.event.currentTarget){
+    window.event.currentTarget.classList.add('active');
+  }
+}
+
+// ========= 퀴즈 정답 확인 =========
+function check(li, panelId, qId, isCorrect){
+  var ul = document.getElementById(panelId + '-' + qId);
+  if(!ul) return;
+  // 이미 답을 골랐으면 무시
+  if(ul.getAttribute('data-done') === '1') return;
+  ul.setAttribute('data-done','1');
+
+  var fb = document.getElementById(panelId + '-' + qId + '-fb');
+
+  if(isCorrect){
+    li.classList.add('correct');
+    if(fb){
+      fb.className = 'feedback ok show';
+      fb.innerHTML = '✓ 정답입니다! 잘 했어요.';
+    }
+  } else {
+    li.classList.add('wrong');
+    // 정답 표시 (true 옵션 찾기)
+    var items = ul.getElementsByTagName('li');
+    for(var i=0;i<items.length;i++){
+      var oc = items[i].getAttribute('onclick') || '';
+      if(oc.indexOf(',true)') !== -1){
+        items[i].classList.add('correct');
+      }
+    }
+    if(fb){
+      fb.className = 'feedback no show';
+      fb.innerHTML = '✗ 오답입니다. 초록색이 정답입니다. 본문을 다시 확인해 보세요.';
+    }
+  }
+}
+
+// ========= 퀴즈 다시 풀기 =========
+function reset(panelId, qId){
+  var ul = document.getElementById(panelId + '-' + qId);
+  if(!ul) return;
+  ul.removeAttribute('data-done');
+  var items = ul.getElementsByTagName('li');
+  for(var i=0;i<items.length;i++){
+    items[i].classList.remove('correct');
+    items[i].classList.remove('wrong');
+  }
+  var fb = document.getElementById(panelId + '-' + qId + '-fb');
+  if(fb){ fb.className = 'feedback'; fb.innerHTML = ''; }
+}
+
+// ========= 모범답안 토글 =========
+function toggleAns(boxId){
+  var box = document.getElementById(boxId);
+  if(!box) return;
+  if(box.classList.contains('show')){
+    box.classList.remove('show');
+  } else {
+    box.classList.add('show');
+  }
+}
+</script>
+
+</body>
+</html>
+
